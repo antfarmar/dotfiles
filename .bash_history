@@ -347,9 +347,6 @@ pacman -S gimp
 pacman -S krita
 pacman -S mypaint
 cd google-chrome/
-ls pkg
-cd aur
-cd ..
 man makepkg
 pacman -S lzop
 makepkg --clean
@@ -394,7 +391,6 @@ pacman -Rns mesa-vdpau
 youtube-viewer --help
 youtube-viewer --examples
 pacman -S wget
-cd vids/
 mpv --list-options
 mpv --list-options | less
 less packages.txt
@@ -422,11 +418,9 @@ wifi-menu
 sudo wifi-menu
 man rm
 find ~ -name '*.mkv'
-ls vids/
 nano /boot/loader/entries/arch.conf
 sudo nano /boot/loader/entries/arch-lts.conf
 exit
-sway
 swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
 netctl start home
 pacman -S fff
@@ -444,7 +438,6 @@ man tee
 sudo bash -c "echo 15 > /sys/class/backlight/amdgpu_bl0/brightness"
 nano ~/.config/redshift.conf
 redshift -p
-cd vids
 mpv *
 git add .bashrc
 git config --global user.name "antfarmar"
@@ -479,27 +472,18 @@ ssh-add ~/.ssh/id_rsa
 ssh -T git@github.com
 sudo htop
 git config --global credential.helper 'cache --timeout=36000'
-git status
 cmatrix
 neofetch
-history
-systemd-analyze blame
 source ~/.bashrc
 htop
 git checkout -- .bash_history
 git status
-sway
-git status
-history
 pacman -Syu --ignore linux
 man history
-history --help
 history -n
 git checkout -- .bash_history
-history --help
 systemd-analyze blame
 systemctl status
-systemd-analyze blame
 /etc/systemd/journald.conf
 sudo /etc/systemd/journald.conf
 nano /etc/systemd/journald.conf
@@ -514,13 +498,11 @@ systemctl daemon-reload
 systemctl --user show-environment
 sudo bash -c "echo VDPAU_DRIVER=radeonsi >> /etc/environment"
 cat /etc/environment
-systemctl daemon-reload
 export VDPAU_DRIVER=radeonsi
-sway
-env
 pacman -Syu --ignore linux
-env
-htop
 mpsyt
 du -h /etc/
 du -ch /etc/
+sway
+history
+history --help
