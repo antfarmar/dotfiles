@@ -495,3 +495,12 @@ pacman -Syu --ignore linux
 man history
 history --help
 history -n
+git checkout -- .bash_history
+history --help
+systemd-analyze blame
+systemctl status
+systemd-analyze blame
+/etc/systemd/journald.conf
+sudo /etc/systemd/journald.conf
+nano /etc/systemd/journald.conf
+sudo nano /etc/systemd/journald.conf
