@@ -16,7 +16,7 @@ HISTSIZE=
 # Ignore duplicate commands, ignore commands starting with a space
 HISTCONTROL=ignoreboth:erasedups
 # Ignore commands listed
-HISTIGNORE="cd*:ls*:cp*:rm*:mv*:ps:bg:fg"
+HISTIGNORE="cd*:ls*:cp*:rm*:mv*:la*:ll*:ps:bg:fg"
 # Force prompt to write history after every command.
 #PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
@@ -28,7 +28,7 @@ alias ll='ls -l'
 alias lla='ls -Al'
 alias grep="grep --color=auto"
 alias pacman="sudo pacman"
-alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles-git/.git --work-tree=$HOME'
+# alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles-git/.git --work-tree=$HOME'
 
 # Prompt
 #PS1='[\u@\h \W]\$ '
