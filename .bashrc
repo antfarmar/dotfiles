@@ -18,8 +18,8 @@ HISTCONTROL=ignoreboth:erasedups
 # Ignore commands listed
 HISTIGNORE="cd*:cp*:rm*:mv*:ls:ls *:la*:ll*:ps:bg:fg"
 # Force prompt to write history after every command.
-PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
-# PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
+# PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 # aliases
 alias ls='ls -hFN --group-directories-first --color=auto'
