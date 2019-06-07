@@ -480,10 +480,18 @@ ssh -T git@github.com
 sudo htop
 git config --global credential.helper 'cache --timeout=36000'
 git status
-cmatrix 
-neofetch 
+cmatrix
+neofetch
 history
 systemd-analyze blame
 source ~/.bashrc
 htop
-systemd-analyze blame
+git checkout -- .bash_history
+git status
+sway
+git status
+history
+pacman -Syu --ignore linux
+man history
+history --help
+history -n
