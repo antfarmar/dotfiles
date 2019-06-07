@@ -511,12 +511,16 @@ systemctl
 systemctl | less
 systemctl enable netctl
 systemctl daemon-reload
-env
 systemctl --user show-environment
 sudo bash -c "echo VDPAU_DRIVER=radeonsi >> /etc/environment"
-cat /etc/environment 
-env
+cat /etc/environment
 systemctl daemon-reload
-env
 export VDPAU_DRIVER=radeonsi
+sway
 env
+pacman -Syu --ignore linux
+env
+htop
+mpsyt
+du -h /etc/
+du -ch /etc/
