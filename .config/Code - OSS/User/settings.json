@@ -1,4 +1,19 @@
 {
     "editor.fontFamily": "Inconsolata, Cousine, monospace",
-    "terminal.integrated.rendererType": "dom"
+    "terminal.integrated.rendererType": "dom",
+    "workbench.editor.highlightModifiedTabs": true,
+    "git.autoRepositoryDetection": false,
+    "git.autorefresh": false,
+    "git.rebaseWhenSync": true,
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorStyle": "block",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.simpleDialog.enable": true,
+    "workbench.commandPalette.preserveInput": true,
+    "workbench.quickOpen.preserveInput": true,
+    "workbench.editor.tabSizing": "shrink"
 }
