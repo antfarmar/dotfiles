@@ -16,5 +16,8 @@
     "workbench.commandPalette.preserveInput": true,
     "workbench.quickOpen.preserveInput": true,
     "workbench.editor.tabSizing": "shrink",
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "terminal.external.linuxExec": "/usr/bin/alacritty",
+    "terminal.integrated.confirmOnExit": true,
+    "terminal.integrated.enableBell": true
 }

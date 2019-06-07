@@ -479,8 +479,10 @@ less ~/packages.txt
 pacman -S openssh
 ssh-add ~/.ssh/id_rsa
 ssh -T git@github.com
-htop
 sudo htop
 git config --global credential.helper 'cache --timeout=36000'
 git status
+cmatrix 
+neofetch 
+htop
 history
