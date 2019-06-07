@@ -15,5 +15,6 @@
     "files.simpleDialog.enable": true,
     "workbench.commandPalette.preserveInput": true,
     "workbench.quickOpen.preserveInput": true,
-    "workbench.editor.tabSizing": "shrink"
+    "workbench.editor.tabSizing": "shrink",
+    "git.confirmSync": false
 }
