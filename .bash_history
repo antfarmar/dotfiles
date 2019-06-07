@@ -455,7 +455,6 @@ git show
 git config --local status.showUntrackedFiles no
 git add .vimrc
 ~
-source ~/.bashrc
 git rm --cached *
 git rm --cached .vimrc
 ln -s .dotfiles-git/.git .git
@@ -473,7 +472,6 @@ git init
 git rm --help
 git push --help
 git status
-source ~/.bashrc
 pacman -Syu --ignore linux
 less ~/packages.txt
 pacman -S openssh
@@ -484,5 +482,8 @@ git config --global credential.helper 'cache --timeout=36000'
 git status
 cmatrix 
 neofetch 
-htop
 history
+systemd-analyze blame
+source ~/.bashrc
+htop
+systemd-analyze blame
