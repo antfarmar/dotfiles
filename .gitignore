@@ -1,0 +1,43 @@
+# blacklist everything
+*
+
+# whitelist subdirectories
+!*/
+
+# blacklist directories with .git folders
+aur/
+
+# whitelist then blacklist
+# !.config/**
+# .config/google-chrome
+# .config/Code - OSS
+# .config/dconf
+
+# ----------
+# WHITELISTS
+# ----------
+
+# home dotfiles
+# !.bash_history
+!.bash_profile
+!.bashrc
+!.inputrc
+!.vimrc
+!.gitignore
+
+# home folders
+!scripts/**
+
+# .config folder
+!*/.config/sway/**
+!.config/alacritty/**
+!.config/redshift.conf
+!.config/neofetch/**
+!.config/gtk-3.0/**
+!.config/nano/**
+!.config/kak/**
+!.config/htop/**
+!.config/mpv/**
+!.config/youtube-viewer/**
+!.config/environment.d/**
+!.config/Code - OSS/User/settings.json

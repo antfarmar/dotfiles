@@ -1,0 +1,18 @@
+$include /etc/inputrc
+
+#set bell-style none
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+#j: history-search-forward
+#k: history-search-backward
+
+set colored-stats On
+set visible-stats On
+set mark-symlinked-directories On
+set colored-completion-prefix On
+set menu-complete-display-prefix On
+set completion-ignore-case On
+set show-all-if-ambiguous On
+#set show-all-if-unmodified On
+#set completion-prefix-display-length 3

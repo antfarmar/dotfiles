@@ -1,0 +1,5 @@
+# found in /usr/share/kak/colors/
+colorscheme gruvbox
+
+# add-highlighter global/ number_lines
+hook global WinCreate ^[^*]+$ %{ add-highlighter window/ number-lines -hlcursor }
