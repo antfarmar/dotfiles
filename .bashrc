@@ -35,6 +35,10 @@ alias pacman="sudo pacman"
 PS1='\[\e[01;37m\]┌─[\!]──[\u]──\[\e[01;36m\][\w]\n\[\e[01;37m\]└─╼>>\[\e[0m\] '
 
 
+# Environment Variables
+# this one is global/system-wide so put in /etc/environment
+#export VDPAU_DRIVER=radeonsi
+
 # If running from a tty (Linux console)
 #if [[ $(tty) =~ /dev/tty[0-9] ]]; then
 if [ "$(tty)" = "/dev/tty1" ]; then

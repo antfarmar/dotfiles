@@ -504,3 +504,19 @@ systemd-analyze blame
 sudo /etc/systemd/journald.conf
 nano /etc/systemd/journald.conf
 sudo nano /etc/systemd/journald.conf
+systemctl daemon-reload
+journalctl --vacuum-size=50M
+sudo journalctl --vacuum-size=50M
+systemctl
+systemctl | less
+systemctl enable netctl
+systemctl daemon-reload
+env
+systemctl --user show-environment
+sudo bash -c "echo VDPAU_DRIVER=radeonsi >> /etc/environment"
+cat /etc/environment 
+env
+systemctl daemon-reload
+env
+export VDPAU_DRIVER=radeonsi
+env
