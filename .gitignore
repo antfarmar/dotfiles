@@ -18,7 +18,7 @@ aur/
 # ----------
 
 # home dotfiles
-# !.bash_history
+!.bash_history
 !.bash_profile
 !.bashrc
 !.inputrc
