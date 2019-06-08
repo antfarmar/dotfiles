@@ -1,3 +1,4 @@
+history -r
 man light
 pacman -Ss sway
 pacman -S sway swaybg swayidle swaylock
@@ -303,7 +304,6 @@ sudo systemctl hibernate
 vim vimtutor.txt
 vim ~/.vimrc
 man history
-history --help
 blkid
 sudo blkid
 nano /etc/systemd/system.conf
@@ -329,7 +329,6 @@ git commit -a -m "edit"
 git push origin master
 rm scrot
 nano errors.txt
-nano ~/.bashrc
 sudo gpm -k
 uname -a
 neofetch
@@ -464,8 +463,6 @@ git add -nA
 git init
 git rm --help
 git push --help
-git status
-pacman -Syu --ignore linux
 less ~/packages.txt
 pacman -S openssh
 ssh-add ~/.ssh/id_rsa
@@ -474,13 +471,9 @@ sudo htop
 git config --global credential.helper 'cache --timeout=36000'
 cmatrix
 neofetch
-source ~/.bashrc
 htop
 git checkout -- .bash_history
-git status
-pacman -Syu --ignore linux
 man history
-history -n
 git checkout -- .bash_history
 systemd-analyze blame
 systemctl status
@@ -499,10 +492,19 @@ systemctl --user show-environment
 sudo bash -c "echo VDPAU_DRIVER=radeonsi >> /etc/environment"
 cat /etc/environment
 export VDPAU_DRIVER=radeonsi
-pacman -Syu --ignore linux
 mpsyt
 du -h /etc/
 du -ch /etc/
 sway
+htop
+sway
+history -n
+history -w
+cat .bash_history 
+nano ~/.bashrc
+git status
+source ~/.bashrc
+history -d 506
 history
 history --help
+pacman -Syu --ignore linux
