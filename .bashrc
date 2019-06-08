@@ -19,6 +19,7 @@ HISTCONTROL=ignoreboth:erasedups
 HISTIGNORE="cd*:cp*:rm*:mv*:ls:ls *:la*:ll*:ps:bg:fg"
 # Force prompt to write history after every command.
 # PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+# source: https://unix.stackexchange.com/a/18443
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 # aliases
