@@ -1,3 +1,4 @@
+./update_version.sh
 ./wp.sh
 /etc/systemd/journald.conf
 /sys/class/backlight/amdgpu_bl0/
@@ -5,11 +6,9 @@
 ~
 alsactl
 alsactl -f /var/lib/alsa/asound.state store
-alsamixer
 amixer sset Headphone unmute
 amixer sset Master unmute
 amixer sset Speaker unmute
-aplay -l
 aplay -L | grep :CARD
 aur/google-chrome/
 blkid
@@ -72,6 +71,7 @@ free -h
 git --help
 git add --help
 git add -f .vimrc
+git add -nA
 git add .bashrc
 git add .config/neofetch/
 git add .config/redshift.conf .config/sway/config .config/alacritty/alacritty.yml
@@ -93,6 +93,8 @@ git pull
 git pull --help
 git push --help
 git push -u origin master
+git push origin master
+git push origin master
 git rebase
 git remote add origin https://github.com/antfarmar/dotfiles.git
 git reset --hard
@@ -120,7 +122,6 @@ kak
 killall chrome
 killall redshift
 less ~/packages.txt
-less packages.txt
 less PKGBUILD
 libinput --help
 libinput debug-events
@@ -163,17 +164,19 @@ man fancontrol
 man fdisk
 man grim
 man history
-man imv
 man libinput
 man light
 man ls
 man makepkg
 man modinfo
+man pacman
 man redshift
 man rm
 man sudo
 man sway
+man swaymsg
 man swaynag
+man tee
 man xz
 mkdir /etc/pacman.d/hooks/
 mkdir /mnt/win
@@ -239,6 +242,7 @@ neofetch
 netctl start home
 netctl stop home
 pacman -Q
+pacman -Q | less
 pacman -S alsa-firmware
 pacman -S alsa-utils
 pacman -S cmatrix
@@ -282,6 +286,8 @@ pacman -Ss alsa
 pacman -Ss sway
 pacman -Ss Xwayland
 pacman -Syu
+pacman -Syu --ignore linux
+pacman -Syy
 pacmd list-sinks
 partx
 partx --help
@@ -391,7 +397,6 @@ udevadm
 umount -R /mnt/win/
 uname -a
 unlink .git
-unzip archive.zip
 vainfo
 vdpauinfo
 vim
@@ -408,28 +413,34 @@ youtube-viewer --examples
 youtube-viewer --help
 youtube-viewer --resolution=480p
 youtube-viewer --tricks
+htop
+cat fff.txt
 sway
-cat fff.txt 
-./update_version.sh
-git clone https://aur.archlinux.org/redshift-wlr-gamma-control.git
-pacman -Q | less
-git clone https://aur.archlinux.org/redshift-wlr-gamma-control-git.git
-makepkg --syncdeps
-makepkg --install
-makepkg --help
-cat PKGBUILD 
-pacman -Syy
-pacman -Syu --ignore linux
-git status
-git add -nA
-git push origin master
 man tee
 htop
-~/scripts/wp.sh 
+~/scripts/wp.sh
 man 5 sway-bar
 man sway-ipc
 man swaymsg
 man pacman
 pacman -Sc
 paccache -h
+readlink -f /bin/sh
+alsamixer
+aplay -l
+unzip archive.zip
+less packages.txt
+man gzip
+tar -czvf ~/walls.tgz ~/pics/
+pacman -S imagemagick
+find -name "* *" -type f
+rename --help
+for f in *; do echo "$f"; done
+for f in *; do mv "$f" "${f// /_}"; done
+for f in *; do mv "$f" "${f//_/-}"; done
 history
+imv scrot.png
+for file in ~/pics/*; do convert $file -resize 1366x768 $file; done
+du -hs ~/pics
+man imv
+git status

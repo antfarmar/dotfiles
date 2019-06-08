@@ -35,8 +35,9 @@ aur/
 !.config/neofetch/**
 !.config/gtk-3.0/**
 !.config/nano/**
-!.config/kak/**
 !.config/htop/**
+!.config/kak/**
+!.config/imv/**
 !.config/mpv/**
 !.config/youtube-viewer/**
 !.config/environment.d/**
