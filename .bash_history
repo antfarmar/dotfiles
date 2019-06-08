@@ -115,7 +115,6 @@ imv -h
 imv ~/pics/
 imv pics/
 imv pics/paper
-imv scrot.png
 infocmp
 journalctl --vacuum-size=50M
 kak
@@ -377,7 +376,6 @@ sudo umount -R /mnt/win/
 sudo vdpauinfo
 sudo wifi-menu
 swapon /swapfile
-swaymsg -t get_inputs
 swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
 systemctl
 systemctl --user show-environment
@@ -413,11 +411,9 @@ youtube-viewer --examples
 youtube-viewer --help
 youtube-viewer --resolution=480p
 youtube-viewer --tricks
-htop
 cat fff.txt
 sway
 man tee
-htop
 ~/scripts/wp.sh
 man 5 sway-bar
 man sway-ipc
@@ -431,16 +427,30 @@ aplay -l
 unzip archive.zip
 less packages.txt
 man gzip
-tar -czvf ~/walls.tgz ~/pics/
 pacman -S imagemagick
 find -name "* *" -type f
 rename --help
 for f in *; do echo "$f"; done
 for f in *; do mv "$f" "${f// /_}"; done
-for f in *; do mv "$f" "${f//_/-}"; done
+for file in ~/pics/*; do convert $file -resize 1366x768 $file; done
+man imv
 history
 imv scrot.png
-for file in ~/pics/*; do convert $file -resize 1366x768 $file; done
-du -hs ~/pics
-man imv
+swaymsg -t get_inputs
+swaymsg -t get_outputs
 git status
+imv
+tar -xzvf ~/walls.tgz ~/pics/
+curl cht.sh/tar
+tar -xzvf ~/walls.tgz
+for f in *; do mv "$f" "${f// /-}"; done
+for f in *; do mv "$f" "${f//_/-}"; done
+tar -czvf ~/walls.tgz .
+tar -czvf ~/walls.tgz *
+tar -ztvf ~/walls.tgz
+for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
+htop
+imv .
+du -hs ~/pics
+man du
+du -hs
