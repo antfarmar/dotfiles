@@ -1,510 +1,435 @@
-history -r
-man light
-pacman -Ss sway
-pacman -S sway swaybg swayidle swaylock
-lspci
-pacman -S neofetch
-pacman -S cmatrix
-light -S 25
-man 5 sway
-nano notes.txt
-pacman -Q
-pacman -Q | less
-pacman -S mesa
-pacman -S xf86-video-amdgpu
-pacman -S mesa-vdpau
-pacman -S vulkan-radeon
-man modinfo
-lsmod | less
-modinfo -i amdgpu
-ls /sys/class/backlight/amdgpu_bl0/
-cat /sys/class/backlight/amdgpu_bl0/max_brightness
-cat /sys/class/backlight/amdgpu_bl0/brightness
-echo 10 > /sys/class/backlight/amdgpu_bl0/brightness
+./wp.sh
+/etc/systemd/journald.conf
 /sys/class/backlight/amdgpu_bl0/
-systool -m amdgpu -av
-modinfo -p amdgpu
-dmesg | less
-ls /usr/bin/
-lsinitcpio -a /boot/initramfs-linux.img
-mkinitcpio
-mkinitcpio -L
-ls /boot/
-pacman -S linux-firmware
-mkinitcpio -g /boot/initramfs-linux.img
-sudo mkinitcpio -g /boot/initramfs-linux.img
-nano ~/.config/alacritty/alacritty.yml
-sudo mkdir /etc/systemd/system/getty@tty1.service.d
-sudo nano /etc/systemd/system/getty@tty1.service.d/noclear.conf
-sudo bootctl update
-pacman -S elinks
-elinks
-mkdir /mnt/win
-sudo mkdir /mnt/win
-lsblk -f
-sudo mount /dev/sda3 /mnt/win/
-sudo umount -R /mnt/
-sudo umount -R /mnt/win/
-sudo umount -R /mnt
-sudo shutdown now
-less PKGBUILD
-makepg -si
-google-chrome-stable &
-killall chrome
-pacman -Ss Xwayland
-pacman -S xorg-server-xwayland
-sway &
-pacman -S alsa-utils
-pacman -Ss alsa
-pacman -S alsa-firmware
-amixer sset Master unmute
-sudo amixer sset Master unmute
-pacman -S mesa lib32-mesa mesa-vdpau lib32-mesa-vdpau xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
-nano /etc/pacman.conf
-pacman -S mesa mesa-vdpau xf86-video-amdgpu vulkan-radeon
-nano ~/.config/alacritty/alacritty.yml
-timedatectl set-ntp true
-timedatectl status
-alsactl
-light -h
-pacman -S imv
-imv ~/pics/
-man imv
-pacman -S grim slurp
-man grim
-grim -h
-slurp -h
-curl cht.sh/
-curl cht.sh/:list
-curl cht.sh/:help
-grim -g "$(slurp)" scrot.png
-pacman -S wl-clipboard
-pacman -Q
-fc-list
-pacman -S figlet
-figlet
-curl cht.sh/ln
-sudo nano /etc/pacman.d/mirrorlist
-mkdir /etc/pacman.d/hooks/
-sudo mkdir /etc/pacman.d/hooks/
-sudo nano /etc/pacman.d/hooks/100-systemd-boot.hook
-udevadm
-alsactl -f /var/lib/alsa/asound.state store
-speaker-test -D sysdefault:CARD=Generic -c 2
-speaker-test -D front:CARD=Generic,DEV=0 -c 2
-aplay -L | grep :CARD
-speaker-test -D hdmi:CARD=HDMI,DEV=0 -c 2
-lspci -knn|grep -iA2 audio
-systool -m snd_hda_intel -av
-modprobe -c | less
-systool -m snd_hda_intel
-modprobe -r snd_hda_intel
-modprobe snd_hda_intel index=1
-speaker-test -D default:CARD=Generic -c 2
-sudo modprobe -r snd_hda_intel
-sudo modprobe snd_hda_intel index=1
-alsamixer
-amixer sset Speaker unmute
-amixer sset Headphone unmute
-aplay -l
-alsamixer
-lspci -knn|grep -iA2 audio
-cat /proc/asound/modules
-lsmod | grep '^snd' | column -t
-sudo nano /etc/modprobe.d/alsa-base.conf
-speaker-test -c 2
-sudo netctl start home
-libinput --help
-libinput debug-events
-sudo libinput debug-events
-man libinput
-ps -aumaf
-logout
-nano notes.txt
-sudo systemctl suspend
-./update_version.sh
-man date
-dmesg | less
-modinfo -p amdgpu
-lsmod
-pacman -S mesa mesa-vdpau xf86-video-amdgpu vulkan-radeon
-lsmod | less
-alsamixer
-pacman -S vdpauinfo
-vdpauinfo
-sudo vdpauinfo
-pacman -S libva-mesa-driver
-pacman -S libva-utils
-vainfo
-mkdir ~/.config/environment.d
 /usr/lib/dri/
-nano ~/.config/environment.d/envvars.conf
+~
+alsactl
+alsactl -f /var/lib/alsa/asound.state store
+alsamixer
+amixer sset Headphone unmute
+amixer sset Master unmute
+amixer sset Speaker unmute
+aplay -l
+aplay -L | grep :CARD
+aur/google-chrome/
+blkid
+blkid -h
+bootctl list
+cat .bash_history
+cat .bash_history | sort
+cat .bash_history | sort > .bash_history
+cat /etc/environment
+cat /etc/fonts/conf.d/README
+cat /etc/fstab
+cat /etc/systemd/sleep.conf
+cat /proc/acpi/wakeup
+cat /proc/asound/modules
+cat /proc/cmdline
+cat /proc/sys/kernel/sysrq
+cat /proc/sys/vm/swappiness
+cat /sys/class/backlight/amdgpu_bl0/brightness
+cat /sys/class/backlight/amdgpu_bl0/max_brightness
+cat /sys/fs/cgroup/memory/memory.swappiness
+cd dotfiles/
+cd google-chrome/
+chmod +x wp.sh
+chmod 600 /swapfile
+cmatrix
+code &
+cp "$(imv .)" ~/pics/paper
+curl cht.sh/
+curl cht.sh/:help
+curl cht.sh/:list
+curl cht.sh/find
+curl cht.sh/ln
+date
+dmesg
+dmesg | less
+du -h
+du -ch
+du -h /etc/
+du -ch /etc/
+echo '*' >> .gitignore
+echo $ALACRITTY_LOG
+echo $PATH
+echo $PS1
+echo 10 > /sys/class/backlight/amdgpu_bl0/brightness
+echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
+elinks
+env
+exec bash
+export VDPAU_DRIVER=radeonsi
+fallocate -l 4G /swapfile
+fancontrol
+fc-list
 fc-match -s monospace
-nano ~/.config/alacritty/alacritty.yml
+fdisk --help
+fdisk /dev/sda
+figlet
+filefrag -v /swapfile
+find ~ -name '*.mkv'
+free -h
+git --help
+git add --help
+git add -f .vimrc
+git add .bashrc
+git add .config/neofetch/
+git add .config/redshift.conf .config/sway/config .config/alacritty/alacritty.yml
+git add .inputrc
+git add .vimrc
+git checkout -- .bash_history
+git commit --help
+git commit -a
+git commit -a -m "edit"
+git commit -m "initial commit"
+git config --global credential.helper 'cache --timeout=36000'
+git config --global user.email "15778096+antfarmar@users.noreply.github.com"
+git config --global user.name "antfarmar"
+git config --local status.showUntrackedFiles no
+git config credential.helper store
+git init
+git init --help
+git pull
+git pull --help
+git push --help
+git push -u origin master
+git rebase
+git remote add origin https://github.com/antfarmar/dotfiles.git
+git reset --hard
+git rm --cached .vimrc
+git rm --cached *
+git rm --help
+git show
+google-chrome-stable --incognito &
+google-chrome-stable &
+grim -g "$(slurp)" scrot.png
+grim -h
+history --help
+history -d 506
+history -n
+history -r
+history -w
 imv -h
-man imv
+imv ~/pics/
 imv pics/
 imv pics/paper
-netctl stop home
-swaymsg -t get_inputs
-man 5 sway-input
-man 5 sway
-man swaymsg
-swaymsg -t get_inputs
-man 5 sway-input
-man 5 sway
-blkid -h
-blkid
-sudo blkid
-free -h
-lsblk -f
-redshift -P -O 4000
-redshift -x
-man redshift
+imv scrot.png
+infocmp
+journalctl --vacuum-size=50M
+kak
+killall chrome
 killall redshift
-pacman -S ttf-roboto
-pacman -S ttf-croscore
+less ~/packages.txt
+less packages.txt
+less PKGBUILD
+libinput --help
+libinput debug-events
+light -G
+light -h
+light -S 0
+light -S 10
+light -S 100
+light -S 15
+light -S 20
+light -S 25
+light -S 50
+ln -s .dotfiles-git/.git .git
+ln -s .local/share/Trash/ Trash
+logout
+ls .config/
+ls /boot/
+ls /etc/fonts/conf.avail/
+ls /etc/fonts/conf.d/
+ls /sys/class/backlight/amdgpu_bl0/
+ls /usr/bin/
+ls /usr/lib/vdpau/
+ls dotfiles/
+lsblk -f
+lsinitcpio -a /boot/initramfs-linux-lts.img
+lsinitcpio -a /boot/initramfs-linux.img
+lsmod
+lsmod | grep '^snd' | column -t
+lsmod | less
+lspci
+lspci -knn|grep -iA2 audio
+lzop
+makepg -si
+makepkg --clean
 man 5 sway
-swaymsg 'output * bg ~/pics/green-garden-hut.jpg' fill
-swaymsg 'output * bg ~/pics/green-garden-hut.jpg' fill
-pacman -S lm_sensors
-nano /etc/sensors.d/fan-speed-control.conf
-sudo nano /etc/sensors.d/fan-speed-control.conf
-fancontrol
+man 5 sway-input
+man cfdisk
+man date
 man fancontrol
-sensors-detect
-sudo sensors
-sudo sensors-detect
-sensors -s
-sudo sensors -s
-sensors
-echo $PS1
-echo $PATH
-echo $ALACRITTY_LOG
-fc-list
-nano ~/.config/gtk-3.0/settings.ini
-fc-list
-setfont Lat2-Terminus16
-netctl stop home
+man fdisk
+man grim
+man history
+man imv
+man libinput
+man light
+man ls
+man makepkg
+man modinfo
+man redshift
+man rm
+man sudo
+man sway
+man swaynag
+man xz
+mkdir /etc/pacman.d/hooks/
+mkdir /mnt/win
+mkdir ~/.config/environment.d
+mkinitcpio
+mkinitcpio --help
+mkinitcpio -g /boot/initramfs-linux.img
+mkinitcpio -L
+mkinitcpio -p linux
+mkswap /swapfile
+modinfo -i amdgpu
+modinfo -p amdgpu
+modprobe -c | less
+modprobe -r snd_hda_intel
+modprobe amdgpu
+modprobe snd_hda_intel index=1
+mount /dev/sda3 /mnt/win/
+mpsyt
+mpv
+mpv --gpu-context=help
+mpv --gpu-context=wayland --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv --gpu-context=wayland https://www.youtube.com/watch?v=pvuN_WvF1to
+mpv --gpu-context=wayland https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv --gpu-context=waylandvk --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv --gpu-context=waylandvk https://www.youtube.com/watch?v=hHW1oY26kxQ
+mpv --gpu-context=waylandvk https://www.youtube.com/watch?v=pvuN_WvF1to
+mpv --gpu-context=waylandvk https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv --list-options
+mpv --list-options | less
+mpv --vd=help
+mpv --vd=help | less
+mpv --vo=gpu --hwdec=vaapi https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv --vo=gpu --hwdec=vdpau https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv --vo=gpu https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv *
+mpv https://www.youtube.com/watch?v=UcFQSqaAPXM
+nano .bash_history
+nano .inputrc
+nano /boot/loader/entries/arch.conf
+nano /etc/makepkg.conf
+nano /etc/mkinitcpio.conf
+nano /etc/mkinitcpio.d/linux.preset
+nano /etc/pacman.conf
+nano /etc/sensors.d/fan-speed-control.conf
+nano /etc/sysctl.d/99-sysctl.conf
+nano /etc/systemd/journald.conf
+nano /etc/systemd/sleep.conf
+nano /etc/systemd/system.conf
+nano /proc/sys/kernel/sysrq
 nano ~/.bash_history
-sudo shutdown now
-sudo wifi-menu
+nano ~/.bashrc
+nano ~/.config/alacritty/alacritty.yml
+nano ~/.config/environment.d/envvars.conf
+nano ~/.config/gtk-3.0/settings.ini
+nano ~/.config/nano/nanorc
+nano ~/.config/redshift.conf
+nano ~/.config/sway/
+nano ~/.config/sway/config
+nano ~/.vimrc
+nano ~/scripts/wp.sh
+neofetch
+netctl start home
+netctl stop home
+pacman -Q
+pacman -S alsa-firmware
+pacman -S alsa-utils
+pacman -S cmatrix
+pacman -S elinks
+pacman -S fff
+pacman -S figlet
+pacman -S gimp
+pacman -S grim slurp
+pacman -S imv
+pacman -S krita
+pacman -S libva-mesa-driver
+pacman -S libva-utils
+pacman -S linux-firmware
+pacman -S linux-lts
+pacman -S lm_sensors
+pacman -S lzop
+pacman -S mesa
+pacman -S mesa lib32-mesa mesa-vdpau lib32-mesa-vdpau xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
+pacman -S mesa mesa-vdpau xf86-video-amdgpu vulkan-radeon
+pacman -S mesa-vdpau
+pacman -S mps-youtube
+pacman -S mpv
+pacman -S mypaint
+pacman -S neofetch
+pacman -S openssh
+pacman -S pavucontrol
+pacman -S pulseeffects
+pacman -S sway swaybg swayidle swaylock
+pacman -S ttf-croscore
+pacman -S ttf-roboto
+pacman -S vdpauinfo
+pacman -S vlc
+pacman -S vulkan-radeon
+pacman -S wget
+pacman -S wl-clipboard
+pacman -S xf86-video-amdgpu
+pacman -S xorg
+pacman -S xorg-server-xwayland
+pacman -S youtube-viewer
+pacman -Ss alsa
+pacman -Ss sway
+pacman -Ss Xwayland
+pacman -Syu
+pacmd list-sinks
 partx
 partx --help
 partx --show
-sudo partx --show
-fdisk --help
-fdisk sda
-man fdisk
-man cfdisk
-fdisk /dev/sda
-sudo fdisk /dev/sda
-blkid
-sudo cfdisk
-mount /dev/sda3 /mnt/win/
-sudo mount /dev/sda3 /mnt/win/
-sudo --help
-umount -R /mnt/win/
-sudo umount -R /mnt/win/
-lsblk -f
-cat /proc/sys/vm/swappiness
-nano /etc/sysctl.d/99-sysctl.conf
-sudo nano /etc/sysctl.d/99-sysctl.conf
-cat /sys/fs/cgroup/memory/memory.swappiness
-fallocate -l 4G /swapfile
-sudo fallocate -l 4G /swapfile
-chmod 600 /swapfile
-sudo chmod 600 /swapfile
-mkswap /swapfile
-sudo mkswap /swapfile
-swapon /swapfile
-sudo swapon /swapfile
-filefrag -v /swapfile
-sudo filefrag -v /swapfile
-sudo nano /boot/loader/entries/arch.conf
-mkinitcpio --help
-nano /etc/mkinitcpio.conf
-nano /etc/mkinitcpio.d/linux.preset
-mkinitcpio -p linux
-sudo mkinitcpio -p linux
-nano /etc/systemd/sleep.conf
-cat /proc/acpi/wakeup
-cat /proc/acpi/wakeup
-sudo cat /proc/acpi/wakeup
-modprobe amdgpu
-sudo modprobe amdgpu
-sudo modprobe -r amdgpu
-man sway
-cat /proc/sys/kernel/sysrq
-nano /proc/sys/kernel/sysrq
-nano /etc/sysctl.d/99-sysctl.conf
-sudo nano /proc/sys/kernel/sysrq
-sudo nano /etc/sysctl.d/99-sysctl.conf
-cat /etc/systemd/sleep.conf
-pacman -S pavucontrol
 pavucontrol
-pacmd list-sinks
-pacman -S pulseeffects
-nano .bash_history
-sudo reboot
-nano ~/.config/sway/config
-sudo nano /etc/sysctl.d/99-sysctl.conf
-sudo nano /etc/pacman.d/hooks/100-systemd-boot.hook
-nano /etc/systemd/sleep.conf
-sudo nano /etc/mkinitcpio.conf
-vim /usr/share/vim/vimfiles/archlinux.vim
-vim /usr/share/vim/vim81/defaults.vim
-nano ~/.vimrc
-vim ~/.vimrc.bak
-vim ~/.vimrc
-vimtutor
-vim vimtutor.txt
-unzip archive.zip
-grim -g "$(slurp)" scrot
-cp "$(imv .)" ~/pics/paper
-chmod +x wp.sh
-vim wp.sh
-nano wp.sh
-exec bash
-vim vimtutor.txt
-nano .inputrc
-nano ~/.config/alacritty/alacritty.yml
-google-chrome-stable --incognito &
-./wp.sh
-cat /etc/fstab
-nano ~/.config/nano/nanorc
-sudo nano /etc/fstab
-pacman -S linux-lts
+ping archlinux.org
+printenv
+ps -aumaf
+python
+redshift -p
+redshift -P -O 5000
+redshift -x
+rm ~/.local/share/fff/trash/*
+rm scrot
+sensors
+sensors -s
+sensors-detect
+setfont Lat2-Terminus16
+slurp -h
+source ~/.bashrc
+speaker-test -c 2
+speaker-test -D default:CARD=Generic -c 2
+speaker-test -D front:CARD=Generic,DEV=0 -c 2
+speaker-test -D hdmi:CARD=HDMI,DEV=0 -c 2
+speaker-test -D sysdefault:CARD=Generic -c 2
+ssh -T git@github.com
+ssh-add ~/.ssh/id_rsa
+su
+sudo --help
+sudo -s
+sudo /etc/systemd/journald.conf
+sudo amixer sset Master unmute
+sudo bash -c "echo 15 > /sys/class/backlight/amdgpu_bl0/brightness"
+sudo bash -c "echo VDPAU_DRIVER=radeonsi >> /etc/environment"
+sudo blkid
+sudo bootctl update
+sudo cat /proc/acpi/wakeup
+sudo cfdisk
+sudo chmod 600 /swapfile
+sudo echo 10 > /sys/class/backlight/amdgpu_bl0/brightness
+sudo fallocate -l 4G /swapfile
+sudo fdisk /dev/sda
+sudo filefrag -v /swapfile
+sudo gpm -k
+sudo htop
+sudo journalctl --vacuum-size=50M
+sudo libinput debug-events
+sudo mkdir /etc/pacman.d/hooks/
+sudo mkdir /etc/systemd/system/getty@tty1.service.d
+sudo mkdir /mnt/win
+sudo mkinitcpio -g /boot/initramfs-linux.img
+sudo mkinitcpio -p linux
+sudo mkswap /swapfile
+sudo modprobe -r amdgpu
+sudo modprobe -r snd_hda_intel
+sudo modprobe amdgpu
+sudo modprobe snd_hda_intel index=1
+sudo mount /dev/sda3 /mnt/win/
+sudo nano /boot/loader/entries/arch-lts.conf
 sudo nano /boot/loader/entries/arch.conf
-lsinitcpio -a /boot/initramfs-linux.img
-lsinitcpio -a /boot/initramfs-linux-lts.img
-bootctl list
-light -S 20
-systemctl suspend
-./update_version.sh
-free -h
-du -h
-du -h ~/pics/
-pacman -S xorg
-light -S 10
-exec bash
-light -S 10
-code &
-free -h
-infocmp
-curl cht.sh/find
-sudo nano /etc/systemd/system.conf
-systemctl daemon-reload
-unzip archive.zip
-./wp.sh
-du -h pics/
+sudo nano /etc/fstab
+sudo nano /etc/makepkg.conf
+sudo nano /etc/mkinitcpio.conf
+sudo nano /etc/modprobe.d/alsa-base.conf
+sudo nano /etc/pacman.d/hooks/100-systemd-boot.hook
+sudo nano /etc/pacman.d/mirrorlist
+sudo nano /etc/sensors.d/fan-speed-control.conf
+sudo nano /etc/sysctl.d/99-sysctl.conf
+sudo nano /etc/systemd/journald.conf
 sudo nano /etc/systemd/sleep.conf
+sudo nano /etc/systemd/system.conf
+sudo nano /etc/systemd/system/getty@tty1.service.d/noclear.conf
+sudo nano /proc/sys/kernel/sysrq
+sudo netctl start home
+sudo partx --show
+sudo reboot
+sudo sensors
+sudo sensors -s
+sudo sensors-detect
+sudo shutdown now
+sudo swapon /swapfile
 sudo systemctl daemon-reload
 sudo systemctl hibernate
-vim vimtutor.txt
-vim ~/.vimrc
-man history
-blkid
-sudo blkid
-nano /etc/systemd/system.conf
-nano ~/.config/sway/config
-whoami
+sudo systemctl suspend
+sudo umount -R /mnt/
+sudo umount -R /mnt/win/
+sudo vdpauinfo
+sudo wifi-menu
+swapon /swapfile
+swaymsg -t get_inputs
+swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
+systemctl
+systemctl --user show-environment
+systemctl | less
+systemctl daemon-reload
+systemctl enable netctl
 systemctl reboot
-pacman -Syy
-pacman -Syu
-git --help
-git remote add origin https://github.com/antfarmar/dotfiles.git
-git add .inputrc
-ls dotfiles/
-git add .config/redshift.conf .config/sway/config .config/alacritty/alacritty.yml
-git push -u origin master
-cd dotfiles/
-git config credential.helper store
-git add .config/neofetch/
-./update_version.sh
-curl cht.sh/ln
-ln -s dotfiles/ .git
-git commit -a
-git commit -a -m "edit"
-git push origin master
-rm scrot
-nano errors.txt
-sudo gpm -k
+systemctl status
+systemctl suspend
+systemd-analyze blame
+systool -m amdgpu -av
+systool -m snd_hda_intel
+systool -m snd_hda_intel -av
+timedatectl set-ntp true
+timedatectl status
+udevadm
+umount -R /mnt/win/
 uname -a
-neofetch
-light -S 15
-dmesg
-cat /proc/cmdline
-man swaynag
-man grim
-date
-imv scrot.png
-cat /etc/fonts/conf.d/README
-ls /etc/fonts/conf.avail/
-ls /etc/fonts/conf.d/
-pacman -S gimp
-pacman -S krita
-pacman -S mypaint
-cd google-chrome/
-man makepkg
-pacman -S lzop
-makepkg --clean
-lzop
-man xz
-./update_version.sh
-du -h
-aur/google-chrome/
-nano /etc/makepkg.conf
-sudo nano /etc/makepkg.conf
-git rebase
-git pull
-pacman -S vlc
-pacman -S mpv
-pacman -S mps-youtube
-pacman -S youtube-viewer
-mpv
-mpv --gpu-context=help
-mpv --gpu-context=wayland https://www.youtube.com/watch?v=pvuN_WvF1to
-mpv --gpu-context=waylandvk https://www.youtube.com/watch?v=pvuN_WvF1to
-mpv --gpu-context=waylandvk https://www.youtube.com/watch?v=hHW1oY26kxQ
-mpv --gpu-context=waylandvk https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --gpu-context=wayland https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --vd=help
-mpv --vd=help | less
-mpv --vo=gpu https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --vo=gpu --hwdec=vaapi https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --vo=gpu --hwdec=vdpau https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --gpu-context=wayland --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --gpu-context=waylandvk --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
-python
+unlink .git
+unzip archive.zip
+vainfo
+vdpauinfo
+vim
+vim /usr/share/vim/vim81/defaults.vim
+vim /usr/share/vim/vimfiles/archlinux.vim
+vim ~/.vimrc
+vim vimtutor.txt
+vim wp.sh
+vimtutor
+whoami
+wifi-menu
+youtube-viewer
+youtube-viewer --examples
+youtube-viewer --help
 youtube-viewer --resolution=480p
 youtube-viewer --tricks
-pacman -Syu
-lspci
-git commit -a -m "edit"
-git push origin master
-man pacman
-pacman -Rns mesa-vdpau
-youtube-viewer --help
-youtube-viewer --examples
-pacman -S wget
-mpv --list-options
-mpv --list-options | less
-less packages.txt
-pacman -S libva-mesa-driver
-pacman -S mesa-vdpau
-sudo vdpauinfo
-ls /usr/lib/vdpau/
-env
-printenv
-env VDPAU_DRIVER=radeonsi
-vdpauinfo
-ps -aumaf
-mpsyt
-export VDPAU_DRIVER=radeonsi
-youtube-viewer
-man ls
-ln -s .local/share/Trash/ Trash
-ls .config/
-exit
-nano ~/.config/sway/
-nano ~/.config/sway/config
-kak
-ping archlinux.org
-wifi-menu
-sudo wifi-menu
-man rm
-find ~ -name '*.mkv'
-nano /boot/loader/entries/arch.conf
-sudo nano /boot/loader/entries/arch-lts.conf
-exit
-swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
-netctl start home
-pacman -S fff
-rm ~/.local/share/fff/trash/*
-light -G
-sudo echo 10 > /sys/class/backlight/amdgpu_bl0/brightness
-su
-man sudo
-sudo -s
-light -S 0
-light -S 100
-light -S 50
-echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
-man tee
-sudo bash -c "echo 15 > /sys/class/backlight/amdgpu_bl0/brightness"
-nano ~/.config/redshift.conf
-redshift -p
-mpv *
-git add .bashrc
-git config --global user.name "antfarmar"
-git config --global user.email "15778096+antfarmar@users.noreply.github.com"
-git commit -m "initial commit"
-git init --help
-git show
-git config --local status.showUntrackedFiles no
-git add .vimrc
-~
-git rm --cached *
-git rm --cached .vimrc
-ln -s .dotfiles-git/.git .git
-git add -f .vimrc
-unlink .git
-git init
-git reset --hard
-vim
-git config --local status.showUntrackedFiles no
-echo '*' >> .gitignore
-git commit --help
-git add --help
-git add -nA
-git init
-git rm --help
-git push --help
-less ~/packages.txt
-pacman -S openssh
-ssh-add ~/.ssh/id_rsa
-ssh -T git@github.com
-sudo htop
-git config --global credential.helper 'cache --timeout=36000'
-cmatrix
-neofetch
-htop
-git checkout -- .bash_history
-man history
-git checkout -- .bash_history
-systemd-analyze blame
-systemctl status
-/etc/systemd/journald.conf
-sudo /etc/systemd/journald.conf
-nano /etc/systemd/journald.conf
-sudo nano /etc/systemd/journald.conf
-systemctl daemon-reload
-journalctl --vacuum-size=50M
-sudo journalctl --vacuum-size=50M
-systemctl
-systemctl | less
-systemctl enable netctl
-systemctl daemon-reload
-systemctl --user show-environment
-sudo bash -c "echo VDPAU_DRIVER=radeonsi >> /etc/environment"
-cat /etc/environment
-export VDPAU_DRIVER=radeonsi
-mpsyt
-du -h /etc/
-du -ch /etc/
 sway
-htop
-sway
-history -n
-history -w
-cat .bash_history 
-nano ~/.bashrc
-git status
-source ~/.bashrc
-history -d 506
-history
-history --help
+cat fff.txt 
+./update_version.sh
+git clone https://aur.archlinux.org/redshift-wlr-gamma-control.git
+pacman -Q | less
+git clone https://aur.archlinux.org/redshift-wlr-gamma-control-git.git
+makepkg --syncdeps
+makepkg --install
+makepkg --help
+cat PKGBUILD 
+pacman -Syy
 pacman -Syu --ignore linux
+git status
+git add -nA
+git push origin master
+man tee
+htop
+~/scripts/wp.sh 
+man 5 sway-bar
+man sway-ipc
+man swaymsg
+man pacman
+pacman -Sc
+paccache -h
+history
