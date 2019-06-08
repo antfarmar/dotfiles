@@ -23,10 +23,11 @@ HISTIGNORE="cd*:cp*:rm*:mv*:ls:ls *:la*:ll*:ps:bg:fg"
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
 # aliases
+alias cd..='cd ..'
 alias ls='ls -hFN --group-directories-first --color=auto'
 alias la='ls -A'
-alias ll='ls -l'
-alias lla='ls -Al'
+alias ll='ls -lG'
+alias lla='ls -AGl'
 alias grep="grep --color=auto"
 alias pacman="sudo pacman"
 # alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles-git/.git --work-tree=$HOME'
