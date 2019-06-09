@@ -434,7 +434,6 @@ du -hs ~/pics
 man du
 du -hs
 git push
-history
 cat /proc/cmdline
 echo $(seq 1 10)
 seq 1 10 | dmenu
@@ -443,7 +442,6 @@ convert image.jpg -resize 1366x768! image.jpg
 ls -1 | wc -l
 source ~/.bashrc
 man ls
-neofetch
 youtube-viewer
 lsd
 pacman -Syu --ignore linux
@@ -468,3 +466,5 @@ redshift -p
 fff
 git commit --help
 git status
+neofetch
+history

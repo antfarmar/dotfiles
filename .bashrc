@@ -35,7 +35,7 @@ alias pacman="sudo pacman"
 
 # Prompt
 #PS1='[\u@\h \W]\$ '
-PS1='\[\e[01;37m\]┌─[\!]──[\u]──\[\e[01;36m\][\w]\n\[\e[01;37m\]└─╼>>\[\e[0m\] '
+PS1='\[\e[01;37m\]┌─[\!]──[\u]───[\[\e[01;33m\] \w \[\e[01;37m\]]\n└─╼>>\[\e[0m\] '
 
 
 # Environment Variables

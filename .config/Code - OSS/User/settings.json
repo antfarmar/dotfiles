@@ -2,8 +2,6 @@
     "editor.fontFamily": "Inconsolata, Cousine, monospace",
     "terminal.integrated.rendererType": "dom",
     "workbench.editor.highlightModifiedTabs": true,
-    "git.autoRepositoryDetection": false,
-    "git.autorefresh": false,
     "git.rebaseWhenSync": true,
     "editor.smoothScrolling": true,
     "editor.cursorBlinking": "solid",
@@ -16,12 +14,14 @@
     "workbench.commandPalette.preserveInput": true,
     "workbench.quickOpen.preserveInput": true,
     "workbench.editor.tabSizing": "shrink",
-    "git.confirmSync": false,
     "terminal.external.linuxExec": "/usr/bin/alacritty",
     "terminal.integrated.confirmOnExit": true,
     "terminal.integrated.enableBell": true,
+    "git.allowForcePush": true,
+    "git.autoRepositoryDetection": false,
     "files.watcherExclude": {
-        "**": true
+        "**": true,
+        "~/.cache/**": true
     },
-    "git.allowForcePush": true
+    "git.autorefresh": false
 }
