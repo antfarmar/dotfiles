@@ -300,16 +300,10 @@ set $bldir /sys/class/backlight/amdgpu_bl0/brightness
 set $blight echo $(( $(<$bldir) + $amt )) | sudo tee $bldir > /dev/null
 set $blamt 25
 
-#bindsym XF86MonBrightnessDown exec $blight
 bindsym XF86MonBrightnessDown exec "amt=-$blamt; $blight"
 bindsym XF86MonBrightnessUp exec "amt=$blamt; $blight"
 #bindsym XF86MonBrightnessDown exec light -U 5
 #bindsym XF86MonBrightnessUp exec light -A 5
-#bindsym XF86MonBrightnessDown exec dsplight down 5
-#bindsym XF86MonBrightnessUp exec dsplight up 5
-
-# Touchpad toggles
-#bindsym XF86TouchpadToggle exec ~/.config/sway/scripts/toggletouchpad.sh # toggle touchpad
 
 # ALSA Audio Controls
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
