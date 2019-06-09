@@ -22,5 +22,6 @@
     "terminal.integrated.enableBell": true,
     "files.watcherExclude": {
         "**": true
-    }
+    },
+    "git.allowForcePush": true
 }

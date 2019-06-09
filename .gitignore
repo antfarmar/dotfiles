@@ -29,7 +29,7 @@ aur/
 !scripts/**
 
 # .config folder
-!*/.config/sway/**
+!.config/sway/**
 !.config/alacritty/**
 !.config/redshift.conf
 !.config/neofetch/**

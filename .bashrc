@@ -28,6 +28,7 @@ alias ls='ls -hFN --group-directories-first --color=auto'
 alias la='ls -A'
 alias ll='ls -lG'
 alias lla='ls -AGl'
+alias lsd='ls -d .*'
 alias grep="grep --color=auto"
 alias pacman="sudo pacman"
 # alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles-git/.git --work-tree=$HOME'

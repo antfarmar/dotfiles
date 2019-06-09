@@ -6,9 +6,11 @@
 ~
 alsactl
 alsactl -f /var/lib/alsa/asound.state store
+alsamixer
 amixer sset Headphone unmute
 amixer sset Master unmute
 amixer sset Speaker unmute
+aplay -l
 aplay -L | grep :CARD
 aur/google-chrome/
 blkid
@@ -23,10 +25,8 @@ cat /etc/fstab
 cat /etc/systemd/sleep.conf
 cat /proc/acpi/wakeup
 cat /proc/asound/modules
-cat /proc/cmdline
 cat /proc/sys/kernel/sysrq
 cat /proc/sys/vm/swappiness
-cat /sys/class/backlight/amdgpu_bl0/brightness
 cat /sys/class/backlight/amdgpu_bl0/max_brightness
 cat /sys/fs/cgroup/memory/memory.swappiness
 cd dotfiles/
@@ -53,9 +53,7 @@ echo $ALACRITTY_LOG
 echo $PATH
 echo $PS1
 echo 10 > /sys/class/backlight/amdgpu_bl0/brightness
-echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 elinks
-env
 exec bash
 export VDPAU_DRIVER=radeonsi
 fallocate -l 4G /swapfile
@@ -78,7 +76,6 @@ git add .config/redshift.conf .config/sway/config .config/alacritty/alacritty.ym
 git add .inputrc
 git add .vimrc
 git checkout -- .bash_history
-git commit --help
 git commit -a
 git commit -a -m "edit"
 git commit -m "initial commit"
@@ -115,6 +112,7 @@ imv -h
 imv ~/pics/
 imv pics/
 imv pics/paper
+imv scrot.png
 infocmp
 journalctl --vacuum-size=50M
 kak
@@ -163,9 +161,9 @@ man fancontrol
 man fdisk
 man grim
 man history
+man imv
 man libinput
 man light
-man ls
 man makepkg
 man modinfo
 man pacman
@@ -237,7 +235,6 @@ nano ~/.config/sway/
 nano ~/.config/sway/config
 nano ~/.vimrc
 nano ~/scripts/wp.sh
-neofetch
 netctl start home
 netctl stop home
 pacman -Q
@@ -285,7 +282,6 @@ pacman -Ss alsa
 pacman -Ss sway
 pacman -Ss Xwayland
 pacman -Syu
-pacman -Syu --ignore linux
 pacman -Syy
 pacmd list-sinks
 partx
@@ -296,7 +292,6 @@ ping archlinux.org
 printenv
 ps -aumaf
 python
-redshift -p
 redshift -P -O 5000
 redshift -x
 rm ~/.local/share/fff/trash/*
@@ -306,7 +301,6 @@ sensors -s
 sensors-detect
 setfont Lat2-Terminus16
 slurp -h
-source ~/.bashrc
 speaker-test -c 2
 speaker-test -D default:CARD=Generic -c 2
 speaker-test -D front:CARD=Generic,DEV=0 -c 2
@@ -376,6 +370,7 @@ sudo umount -R /mnt/win/
 sudo vdpauinfo
 sudo wifi-menu
 swapon /swapfile
+swaymsg -t get_inputs
 swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
 systemctl
 systemctl --user show-environment
@@ -395,6 +390,7 @@ udevadm
 umount -R /mnt/win/
 uname -a
 unlink .git
+unzip archive.zip
 vainfo
 vdpauinfo
 vim
@@ -406,13 +402,11 @@ vim wp.sh
 vimtutor
 whoami
 wifi-menu
-youtube-viewer
 youtube-viewer --examples
 youtube-viewer --help
 youtube-viewer --resolution=480p
 youtube-viewer --tricks
 cat fff.txt
-sway
 man tee
 ~/scripts/wp.sh
 man 5 sway-bar
@@ -421,24 +415,11 @@ man swaymsg
 man pacman
 pacman -Sc
 paccache -h
-readlink -f /bin/sh
-alsamixer
-aplay -l
-unzip archive.zip
-less packages.txt
-man gzip
-pacman -S imagemagick
-find -name "* *" -type f
-rename --help
-for f in *; do echo "$f"; done
-for f in *; do mv "$f" "${f// /_}"; done
-for file in ~/pics/*; do convert $file -resize 1366x768 $file; done
+sway
 man imv
-history
 imv scrot.png
 swaymsg -t get_inputs
 swaymsg -t get_outputs
-git status
 imv
 tar -xzvf ~/walls.tgz ~/pics/
 curl cht.sh/tar
@@ -448,9 +429,42 @@ for f in *; do mv "$f" "${f//_/-}"; done
 tar -czvf ~/walls.tgz .
 tar -czvf ~/walls.tgz *
 tar -ztvf ~/walls.tgz
-for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
-htop
 imv .
 du -hs ~/pics
 man du
 du -hs
+git push
+history
+cat /proc/cmdline
+echo $(seq 1 10)
+seq 1 10 | dmenu
+for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
+convert image.jpg -resize 1366x768! image.jpg
+ls -1 | wc -l
+source ~/.bashrc
+man ls
+neofetch
+youtube-viewer
+lsd
+pacman -Syu --ignore linux
+cat /sys/class/backlight/amdgpu_bl0/brightness
+cat /sys/class/backlight/amdgpu_bl0/actual_brightness
+curl https://wttr.in
+curl https://wttr.in?format=1
+curl wttr.in/:help
+pacman -S upower
+upower --help
+upower --dump
+upower --enumerate
+cal
+echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
+env
+echo "$((1+2))"
+man xargs
+curl cht.sh/xargs
+htop
+less packages.txt
+redshift -p
+fff
+git commit --help
+git status
