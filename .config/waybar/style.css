@@ -1,13 +1,13 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: Roboto, Arimo, Noto Sans, Helvetica, sans-serif;
     font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
+    background-color: rgba(43, 48, 59, 0.8);
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
@@ -15,23 +15,28 @@ window#waybar {
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    opacity: 0.0;
 }
 
-/*
+
 window#waybar.empty {
     background-color: transparent;
 }
 window#waybar.solo {
-    background-color: #FFFFFF;
+    background-color: #2b3852;
 }
-*/
 
-window#waybar.termite {
+
+window#waybar.alacritty {
     background-color: #3F3F3F;
 }
 
-window#waybar.chromium {
+window#waybar.google-chrome {
+    background-color: #000000;
+    border: none;
+}
+
+window#waybar.code {
     background-color: #000000;
     border: none;
 }
@@ -59,8 +64,8 @@ window#waybar.chromium {
 }
 
 #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
-    padding: 0 10px;
-    margin: 0 5px;
+    padding: 0 5px;
+    margin: 0 0px;
     color: #ffffff;
 }
 
@@ -121,7 +126,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
+    background-color: #4f567e;
     color: #000000;
 }
 

@@ -23,5 +23,6 @@
         "**": true,
         "~/.cache/**": true
     },
-    "git.autorefresh": false
+    "git.autorefresh": false,
+    "window.zoomLevel": 0
 }

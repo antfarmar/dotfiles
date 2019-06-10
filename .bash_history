@@ -25,8 +25,10 @@ cat /etc/fstab
 cat /etc/systemd/sleep.conf
 cat /proc/acpi/wakeup
 cat /proc/asound/modules
+cat /proc/cmdline
 cat /proc/sys/kernel/sysrq
 cat /proc/sys/vm/swappiness
+cat /sys/class/backlight/amdgpu_bl0/brightness
 cat /sys/class/backlight/amdgpu_bl0/max_brightness
 cat /sys/fs/cgroup/memory/memory.swappiness
 cd dotfiles/
@@ -53,6 +55,7 @@ echo $ALACRITTY_LOG
 echo $PATH
 echo $PS1
 echo 10 > /sys/class/backlight/amdgpu_bl0/brightness
+echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 elinks
 exec bash
 export VDPAU_DRIVER=radeonsi
@@ -76,6 +79,7 @@ git add .config/redshift.conf .config/sway/config .config/alacritty/alacritty.ym
 git add .inputrc
 git add .vimrc
 git checkout -- .bash_history
+git commit --help
 git commit -a
 git commit -a -m "edit"
 git commit -m "initial commit"
@@ -99,6 +103,7 @@ git rm --cached .vimrc
 git rm --cached *
 git rm --help
 git show
+git status
 google-chrome-stable --incognito &
 google-chrome-stable &
 grim -g "$(slurp)" scrot.png
@@ -119,6 +124,7 @@ kak
 killall chrome
 killall redshift
 less ~/packages.txt
+less packages.txt
 less PKGBUILD
 libinput --help
 libinput debug-events
@@ -164,6 +170,7 @@ man history
 man imv
 man libinput
 man light
+man ls
 man makepkg
 man modinfo
 man pacman
@@ -282,6 +289,7 @@ pacman -Ss alsa
 pacman -Ss sway
 pacman -Ss Xwayland
 pacman -Syu
+pacman -Syu --ignore linux
 pacman -Syy
 pacmd list-sinks
 partx
@@ -292,6 +300,7 @@ ping archlinux.org
 printenv
 ps -aumaf
 python
+redshift -p
 redshift -P -O 5000
 redshift -x
 rm ~/.local/share/fff/trash/*
@@ -301,6 +310,7 @@ sensors -s
 sensors-detect
 setfont Lat2-Terminus16
 slurp -h
+source ~/.bashrc
 speaker-test -c 2
 speaker-test -D default:CARD=Generic -c 2
 speaker-test -D front:CARD=Generic,DEV=0 -c 2
@@ -402,6 +412,7 @@ vim wp.sh
 vimtutor
 whoami
 wifi-menu
+youtube-viewer
 youtube-viewer --examples
 youtube-viewer --help
 youtube-viewer --resolution=480p
@@ -415,7 +426,6 @@ man swaymsg
 man pacman
 pacman -Sc
 paccache -h
-sway
 man imv
 imv scrot.png
 swaymsg -t get_inputs
@@ -429,26 +439,14 @@ for f in *; do mv "$f" "${f//_/-}"; done
 tar -czvf ~/walls.tgz .
 tar -czvf ~/walls.tgz *
 tar -ztvf ~/walls.tgz
+for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
 imv .
 du -hs ~/pics
 man du
 du -hs
+git status
 git push
-cat /proc/cmdline
-echo $(seq 1 10)
-seq 1 10 | dmenu
-for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
-convert image.jpg -resize 1366x768! image.jpg
-ls -1 | wc -l
-source ~/.bashrc
-man ls
-youtube-viewer
-lsd
-pacman -Syu --ignore linux
-cat /sys/class/backlight/amdgpu_bl0/brightness
-cat /sys/class/backlight/amdgpu_bl0/actual_brightness
-curl https://wttr.in
-curl https://wttr.in?format=1
+env
 curl wttr.in/:help
 pacman -S upower
 upower --help
@@ -460,11 +458,43 @@ env
 echo "$((1+2))"
 man xargs
 curl cht.sh/xargs
-htop
 less packages.txt
 redshift -p
 fff
 git commit --help
 git status
-neofetch
+redshift -p
+redshift -P -O 5000
+redshift -P -O 5000 &
+pacman -Qi
+pacman -Qi wlroots
+clear
+dmesg | less
+cat /proc/loadavg
+ip route get 1.1.1.1
+ip link
+ip addr
+ip route
+upower --show-info
+upower --enumerate
+upower --dump
+pacman -Syu --ignore linux
+less packages.txt
+pacman -S waybar
+ping archlinux.org
+fc-list
+fc-list | less
+pacman -S ttf-freefont
+pacman -S bdf-unifont
+pacman -S noto-fonts
+pacman -S noto-fonts-emoji
+fc-cache -fv
+fc-list
+fff
+lsd
+sudo fff
+sway
 history
+pacman -S otf-font-awesome
+htop
+neofetch
