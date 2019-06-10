@@ -15,25 +15,29 @@ hide_edge_borders smart
 
 ### STATUS BAR
 # Read `man 5 sway-bar` for more information about this section.
+#bar {
+#    position bottom
+#    height 25
+#    #font xos4 Terminus
+#    font Arimo
+#    #font Roboto
+#    gaps 0 0
+#    mode hide
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+#    #status_command while date +'%Y-%m-%d %l:%M %p'; do sleep 60; done
+#    status_command while date +'%a %b %d %R '; do sleep 60; done
+#
+#    colors {
+#        statusline #888888
+#        background #111111
+#        inactive_workspace #333333 #888888 #333333
+#    }
+#}
+
 bar {
-    position bottom
-    height 25
-    #font xos4 Terminus
-    font Arimo
-    #font Roboto
-    gaps 0 0
-    mode hide
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %l:%M %p'; do sleep 60; done
-    status_command while date +'%a %b %d %R '; do sleep 60; done
-
-    colors {
-        statusline #888888
-        background #111111
-        inactive_workspace #333333 #888888 #333333
-    }
+    swaybar_command waybar
 }
 
 # ----------------------------------------------------------------------------
