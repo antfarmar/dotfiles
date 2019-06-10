@@ -30,6 +30,7 @@ aur/
 
 # .config folder
 !.config/sway/**
+!.config/waybar/**
 !.config/alacritty/**
 !.config/redshift.conf
 !.config/neofetch/**
