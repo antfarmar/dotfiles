@@ -11,7 +11,7 @@ window#waybar {
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
-    transition-duration: .5s;
+    transition-duration: .25s;
 }
 
 window#waybar.hidden {
@@ -22,6 +22,7 @@ window#waybar.hidden {
 window#waybar.empty {
     background-color: transparent;
 }
+
 window#waybar.solo {
     background-color: #2b3852;
 }
@@ -32,12 +33,12 @@ window#waybar.alacritty {
 }
 
 window#waybar.google-chrome {
-    background-color: #000000;
+    background-color: #263238;
     border: none;
 }
 
-window#waybar.code {
-    background-color: #000000;
+window#waybar.code-oss {
+    background-color: #0077ff;
     border: none;
 }
 
@@ -63,12 +64,27 @@ window#waybar.code {
     border-bottom: 3px solid #ffffff;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
+/* #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
     padding: 0 5px;
     margin: 0 0px;
     color: #ffffff;
+} */
+
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
+	/* margin-bottom: 0; */
+    /* margin-top: 8px; */
+    /* margin-left: 10px; */
+	/* padding-left: 10px; */
+	/* padding-right: 10px; */
+    margin: 0px 2px;
+    padding: 1px 10px;
+	border-radius: 25px;
+	transition: none;
+	color: #dddddd;
+	background: #222222;
 }
 
+/*
 #clock {
     background-color: #64727D;
 }
@@ -185,4 +201,4 @@ label:focus {
 
 #mpd.paused {
     background-color: #51a37a;
-}
+} */
