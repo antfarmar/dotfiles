@@ -124,7 +124,6 @@ kak
 killall chrome
 killall redshift
 less ~/packages.txt
-less packages.txt
 less PKGBUILD
 libinput --help
 libinput debug-events
@@ -236,7 +235,6 @@ nano ~/.bashrc
 nano ~/.config/alacritty/alacritty.yml
 nano ~/.config/environment.d/envvars.conf
 nano ~/.config/gtk-3.0/settings.ini
-nano ~/.config/nano/nanorc
 nano ~/.config/redshift.conf
 nano ~/.config/sway/
 nano ~/.config/sway/config
@@ -289,7 +287,6 @@ pacman -Ss alsa
 pacman -Ss sway
 pacman -Ss Xwayland
 pacman -Syu
-pacman -Syu --ignore linux
 pacman -Syy
 pacmd list-sinks
 partx
@@ -446,19 +443,15 @@ man du
 du -hs
 git status
 git push
-env
-curl wttr.in/:help
 pacman -S upower
 upower --help
 upower --dump
 upower --enumerate
 cal
 echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
-env
 echo "$((1+2))"
 man xargs
 curl cht.sh/xargs
-less packages.txt
 redshift -p
 fff
 git commit --help
@@ -478,8 +471,6 @@ ip route
 upower --show-info
 upower --enumerate
 upower --dump
-pacman -Syu --ignore linux
-less packages.txt
 pacman -S waybar
 ping archlinux.org
 fc-list
@@ -496,5 +487,17 @@ sudo fff
 sway
 history
 pacman -S otf-font-awesome
-htop
 neofetch
+pacman -Syu --ignore linux
+less packages.txt
+pacman -S alacritty-terminfo
+nano ~/.config/nano/nanorc
+env
+htop
+curl wttr.in/:help
+curl wttr.in/
+curl https://wttr.in
+curl https://wttr.in?format=1
+echo $(seq 1 10)
+seq 1 10 | dmenu
+ls -1 | wc -l

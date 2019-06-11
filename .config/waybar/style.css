@@ -1,44 +1,46 @@
 * {
     border: none;
-    border-radius: 0;
-    font-family: Roboto, Arimo, Noto Sans, Helvetica, sans-serif;
-    font-size: 13px;
+    border-radius: 25px;
+    font-family: xos4 Terminus, Roboto, Arimo, Noto Sans, Helvetica, sans-serif;
+    font-size: 12px;
     min-height: 0;
 }
 
 window#waybar {
     background-color: rgba(43, 48, 59, 0.8);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    color: #dddddd;
     transition-property: background-color;
     transition-duration: .25s;
 }
 
 window#waybar.hidden {
-    opacity: 0.0;
+    opacity: 0.8;
 }
 
-
+/*
 window#waybar.empty {
     background-color: transparent;
 }
+ */
 
+/*
 window#waybar.solo {
     background-color: #2b3852;
 }
+ */
 
-
-window#waybar.alacritty {
-    background-color: #3F3F3F;
+window#waybar.Alacritty #window {
+    background-color: #282a2e;
 }
 
-window#waybar.google-chrome {
-    background-color: #263238;
+window#waybar.google-chrome #window {
+    background-color: #263238; /*arc-dark*/
     border: none;
 }
 
-window#waybar.code-oss {
-    background-color: #0077ff;
+window#waybar.code-oss #window {
+    background-color: #007ACC;
     border: none;
 }
 
@@ -70,12 +72,12 @@ window#waybar.code-oss {
     color: #ffffff;
 } */
 
-#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
+#window, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
 	/* margin-bottom: 0; */
-    /* margin-top: 8px; */
-    /* margin-left: 10px; */
-	/* padding-left: 10px; */
-	/* padding-right: 10px; */
+    /* margin-top: 8; */
+    /* margin-left: 10; */
+	/* padding-left: 10; */
+	/* padding-right: 10; */
     margin: 0px 2px;
     padding: 1px 10px;
 	border-radius: 25px;
