@@ -18,7 +18,7 @@ HISTSIZE=
 # Ignore duplicate commands, ignore commands starting with a space
 HISTCONTROL=ignoreboth:erasedups
 # Ignore commands listed
-HISTIGNORE="cd*:cp*:rm*:mv*:ls:ls *:la*:ll*:ps:bg:fg"
+HISTIGNORE="cd*:cp*:rm*:mv*:ls:ls *:la*:ll*:ps:bg:fg:history -d*"
 # Force prompt to write history after every command.
 # PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # source: https://unix.stackexchange.com/a/18443

@@ -65,7 +65,6 @@ fc-list
 fc-match -s monospace
 fdisk --help
 fdisk /dev/sda
-figlet
 filefrag -v /swapfile
 find ~ -name '*.mkv'
 free -h
@@ -114,7 +113,6 @@ history -r
 history -w
 imv -h
 imv ~/pics/
-imv pics/
 imv pics/paper
 imv scrot.png
 infocmp
@@ -178,7 +176,6 @@ man sudo
 man sway
 man swaymsg
 man swaynag
-man tee
 man xz
 mkdir /etc/pacman.d/hooks/
 mkdir /mnt/win
@@ -239,7 +236,6 @@ nano ~/.config/sway/
 nano ~/.config/sway/config
 nano ~/.vimrc
 nano ~/scripts/wp.sh
-netctl stop home
 pacman -Q
 pacman -Q | less
 pacman -S alsa-firmware
@@ -376,12 +372,10 @@ swapon /swapfile
 swaymsg -t get_inputs
 swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
 systemctl
-systemctl --user show-environment
 systemctl | less
 systemctl daemon-reload
 systemctl enable netctl
 systemctl reboot
-systemctl status
 systemctl suspend
 systemd-analyze blame
 systool -m amdgpu -av
@@ -411,7 +405,6 @@ youtube-viewer --help
 youtube-viewer --resolution=480p
 youtube-viewer --tricks
 cat fff.txt
-man tee
 ~/scripts/wp.sh
 man 5 sway-bar
 man sway-ipc
@@ -435,7 +428,6 @@ tar -ztvf ~/walls.tgz
 for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
 imv .
 du -hs ~/pics
-man du
 du -hs
 git status
 git push
@@ -449,13 +441,11 @@ echo "$((1+2))"
 man xargs
 curl cht.sh/xargs
 redshift -p
-fff
 git commit --help
 git status
 redshift -p
 redshift -P -O 5000
 redshift -P -O 5000 &
-pacman -Qi
 pacman -Qi wlroots
 dmesg | less
 cat /proc/loadavg
@@ -475,17 +465,10 @@ pacman -S noto-fonts
 pacman -S noto-fonts-emoji
 fc-cache -fv
 fc-list
-fff
 lsd
-sudo fff
 sway
-pacman -S otf-font-awesome
-pacman -Syu --ignore linux
-less packages.txt
 pacman -S alacritty-terminfo
-nano ~/.config/nano/nanorc
 env
-htop
 curl wttr.in/:help
 curl wttr.in/
 echo $(seq 1 10)
@@ -501,31 +484,125 @@ telnet towel.blinkenlights.nl
 while sleep 1; do tput sc; tput cup 0 $(($(tput cols)-32)); date; tput rc; done &
 pushd /etc/fonts/
 popd
-man hier
 awk '!x[$0]++' .bash_history
-awk '!x[$0]++' .bash_history #remove duplicates
 awk '!x[$0]++' .bash_history > .bash_history
 cat .bash_history
 history --help
 ps aux
 ps aux | sort -nrk 3 | head
 ps aux | sort -b -k 4 | tail
-du -s * | sort -n | tail
 clear
-neofetch
-watch -t -n1 "date +%T|figlet"
 dd if=/dev/zero of=/dev/null bs=1M count=1000
 timeout 3s ping archlinux.org
 cat /dev/urandom | hexdump -C | grep "ca fe"
 cat /dev/urandom
-reset
 sed -n 123p .bash_history
-bind -P
 ping archlinux.org
 until ping archlinux.org; do :; done
 until ping archlinux.org; do sleep 3; :; done
 grep ^Dirty /proc/meminfo
 python -m http.server
-history
 source ~/.bashrc
 cat /proc/meminfo
+pacman -Qi
+less packages.txt
+pacman -S otf-font-awesome
+pacman -Syu --ignore linux
+nano ~/.config/nano/nanorc
+fff
+htop
+neofetch
+imv pics/
+telnet towel.blinkenlights.nl
+imv scrot.png
+figlet
+figlet "message"
+systemctl --user show-environment
+systemctl status
+man systemctl
+man netctl
+netctl --help
+netctl status home
+netctl edit home
+netctl stop home
+sudo netctl edit home
+sudo fff
+wifi-menu --help
+sudo wifi-menu -o
+netctl switch-to home2G
+netctl stop-all
+sudo netctl stop-all
+netctl list
+netctl stop home2G
+netctl stop home5G
+netctl disable home
+sudo netctl disable home
+netctl start home2G
+sudo netctl switch-to home2G
+sudo netctl switch-to home5G
+netctl enable home5G
+sudo netctl enable home5G
+systemctl status netctl
+netctl is-enabled home5G
+netctl status home5G
+netctl status home2G
+netctl disable home2G
+sudo netctl disable home2G
+netctl is-enabled home2G
+systemctl is-enabled netctl
+man tee
+history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+awk '!x[$0]++' .bash_history #remove duplicates
+history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head #top most used commands
+man hier
+man hier #linux filesystem hierarchy
+cat /etc/issue 
+systemd-analyze time
+sudo dd if=/dev/mem | cat | strings #look at strings in ram RAM
+reset
+man fc
+read day month year <<< $(date +'%d %m %y')
+disown --help
+du -s * | sort -n | tail
+du -sh * | sort -n | tail #show 10 biggest/largest files
+du -s * | sort -n | tail #show 10 biggest/largest files
+man du
+for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done #show numbers for bash 256 colors
+watch -t -n1 "date +%T|figlet"
+watch -t -n1 "date +%T|figlet" #terminal clock
+dd if=/dev/zero of=/dev/null bs=1M count=1000 #bandwidth speed processor memory
+man ps
+ps awwfux | less -S
+sed -n 123p .bash_history #print specific line in file
+find ~ -mmin 5 -type f #files edited changed last 5 minutes
+find ~ -mmin 1 -type f
+showkey
+sudo showkey
+showkey --help
+showkey -a
+find / -type f -size +500M
+sudo find / -type f -size +500M
+find / -type f -size +500M #find large files
+find ~ -type f -size +500M #find large files
+nl .bash_history 
+history
+perl -e 'print "P1\n256 256\n", map {$_&($_>>8)?1:0} (0..0xffff)' | display #draw sierpinski triangle
+display
+read -s pass; echo $pass | md5sum | base64 | cut -c -16 #generate a password
+file -s /dev/sda
+sudo file -s /dev/sda
+sudo file -s /dev/sda6
+df
+df -h
+df --help
+man df
+len=20; tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${len} | xargs #generate password
+sort ~/.bash_history | uniq -c | sort -n | tail -n 10 #n most used commands
+man console_codes
+man bash
+cat keys.txt 
+man bash | awk '/^   Commands for Moving$/{print_this=1} /^   Programmable Completion$/{print_this=0} print_this==1{sub(/^   /,""); print}' | less
+man bash | awk '/^   Commands for Moving$/{print_this=1} /^   Programmable Completion$/{print_this=0} print_this==1{sub(/^   /,""); print}' | less #bash commands
+bind -P
+bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}'
+bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}' #bash bound keys command shortcut
