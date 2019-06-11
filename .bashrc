@@ -42,16 +42,15 @@ PS1='\[\e[01;37m\]┌─[\!]──[\u]───[\[\e[01;33m\] \w \[\e[01;37m\]]\
 # this one is global/system-wide so put in /etc/environment
 #export VDPAU_DRIVER=radeonsi
 
+# Set the Linux Console font: /usr/share/kbd/consolefonts/
+setfont Lat2-Terminus16.psfu
+
+# General Purpose Mouse (in the console)
+sudo gpm -B 123 -r 25 -m /dev/input/mice -t ps2
+
 # If running from a tty (Linux console)
 #if [[ $(tty) =~ /dev/tty[0-9] ]]; then
 if [ "$(tty)" = "/dev/tty1" ]; then
-
-    # Set the Linux Console font: /usr/share/kbd/consolefonts/
-    setfont Lat2-Terminus16.psfu
-
-    # General Purpose Mouse (in the console)
-    sudo gpm -B 123 -r 25 -m /dev/input/mice -t ps2
-
     # Run a WM
-    #exec sway
+    exec sway
 fi
