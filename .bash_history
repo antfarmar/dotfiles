@@ -108,7 +108,6 @@ google-chrome-stable --incognito &
 google-chrome-stable &
 grim -g "$(slurp)" scrot.png
 grim -h
-history --help
 history -d 506
 history -n
 history -r
@@ -240,7 +239,6 @@ nano ~/.config/sway/
 nano ~/.config/sway/config
 nano ~/.vimrc
 nano ~/scripts/wp.sh
-netctl start home
 netctl stop home
 pacman -Q
 pacman -Q | less
@@ -293,7 +291,6 @@ partx
 partx --help
 partx --show
 pavucontrol
-ping archlinux.org
 printenv
 ps -aumaf
 python
@@ -307,7 +304,6 @@ sensors -s
 sensors-detect
 setfont Lat2-Terminus16
 slurp -h
-source ~/.bashrc
 speaker-test -c 2
 speaker-test -D default:CARD=Generic -c 2
 speaker-test -D front:CARD=Generic,DEV=0 -c 2
@@ -461,7 +457,6 @@ redshift -P -O 5000
 redshift -P -O 5000 &
 pacman -Qi
 pacman -Qi wlroots
-clear
 dmesg | less
 cat /proc/loadavg
 ip route get 1.1.1.1
@@ -472,7 +467,6 @@ upower --show-info
 upower --enumerate
 upower --dump
 pacman -S waybar
-ping archlinux.org
 fc-list
 fc-list | less
 pacman -S ttf-freefont
@@ -485,9 +479,7 @@ fff
 lsd
 sudo fff
 sway
-history
 pacman -S otf-font-awesome
-neofetch
 pacman -Syu --ignore linux
 less packages.txt
 pacman -S alacritty-terminfo
@@ -496,8 +488,44 @@ env
 htop
 curl wttr.in/:help
 curl wttr.in/
-curl https://wttr.in
-curl https://wttr.in?format=1
 echo $(seq 1 10)
 seq 1 10 | dmenu
 ls -1 | wc -l
+netctl start home
+curl https://wttr.in?format=1
+curl https://wttr.in
+curl ifconfig.me
+curl ifconfig.me/all
+man ascii
+telnet towel.blinkenlights.nl
+while sleep 1; do tput sc; tput cup 0 $(($(tput cols)-32)); date; tput rc; done &
+pushd /etc/fonts/
+popd
+man hier
+awk '!x[$0]++' .bash_history
+awk '!x[$0]++' .bash_history #remove duplicates
+awk '!x[$0]++' .bash_history > .bash_history
+cat .bash_history
+history --help
+ps aux
+ps aux | sort -nrk 3 | head
+ps aux | sort -b -k 4 | tail
+du -s * | sort -n | tail
+clear
+neofetch
+watch -t -n1 "date +%T|figlet"
+dd if=/dev/zero of=/dev/null bs=1M count=1000
+timeout 3s ping archlinux.org
+cat /dev/urandom | hexdump -C | grep "ca fe"
+cat /dev/urandom
+reset
+sed -n 123p .bash_history
+bind -P
+ping archlinux.org
+until ping archlinux.org; do :; done
+until ping archlinux.org; do sleep 3; :; done
+grep ^Dirty /proc/meminfo
+python -m http.server
+history
+source ~/.bashrc
+cat /proc/meminfo
