@@ -61,7 +61,6 @@ exec bash
 export VDPAU_DRIVER=radeonsi
 fallocate -l 4G /swapfile
 fancontrol
-fc-list
 fc-match -s monospace
 fdisk --help
 fdisk /dev/sda
@@ -237,7 +236,6 @@ nano ~/.config/sway/config
 nano ~/.vimrc
 nano ~/scripts/wp.sh
 pacman -Q
-pacman -Q | less
 pacman -S alsa-firmware
 pacman -S alsa-utils
 pacman -S cmatrix
@@ -266,7 +264,6 @@ pacman -S openssh
 pacman -S pavucontrol
 pacman -S pulseeffects
 pacman -S sway swaybg swayidle swaylock
-pacman -S ttf-croscore
 pacman -S ttf-roboto
 pacman -S vdpauinfo
 pacman -S vlc
@@ -404,7 +401,6 @@ youtube-viewer --examples
 youtube-viewer --help
 youtube-viewer --resolution=480p
 youtube-viewer --tricks
-cat fff.txt
 ~/scripts/wp.sh
 man 5 sway-bar
 man sway-ipc
@@ -457,14 +453,10 @@ upower --show-info
 upower --enumerate
 upower --dump
 pacman -S waybar
-fc-list
-fc-list | less
 pacman -S ttf-freefont
 pacman -S bdf-unifont
 pacman -S noto-fonts
 pacman -S noto-fonts-emoji
-fc-cache -fv
-fc-list
 lsd
 sway
 pacman -S alacritty-terminfo
@@ -475,8 +467,6 @@ echo $(seq 1 10)
 seq 1 10 | dmenu
 ls -1 | wc -l
 netctl start home
-curl https://wttr.in?format=1
-curl https://wttr.in
 curl ifconfig.me
 curl ifconfig.me/all
 man ascii
@@ -505,13 +495,7 @@ python -m http.server
 source ~/.bashrc
 cat /proc/meminfo
 pacman -Qi
-less packages.txt
 pacman -S otf-font-awesome
-pacman -Syu --ignore linux
-nano ~/.config/nano/nanorc
-fff
-htop
-neofetch
 imv pics/
 telnet towel.blinkenlights.nl
 imv scrot.png
@@ -526,7 +510,6 @@ netctl status home
 netctl edit home
 netctl stop home
 sudo netctl edit home
-sudo fff
 wifi-menu --help
 sudo wifi-menu -o
 netctl switch-to home2G
@@ -592,7 +575,6 @@ read -s pass; echo $pass | md5sum | base64 | cut -c -16 #generate a password
 file -s /dev/sda
 sudo file -s /dev/sda
 sudo file -s /dev/sda6
-df
 df -h
 df --help
 man df
@@ -606,3 +588,33 @@ man bash | awk '/^   Commands for Moving$/{print_this=1} /^   Programmable Compl
 bind -P
 bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}'
 bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}' #bash bound keys command shortcut
+htop
+neofetch
+man --html=google-chrome-stable man #open man page in browser html 
+pacman -Syu --ignore linux
+df
+curl https://wttr.in
+curl https://wttr.in?format=1
+pacman -Rns otf-font-awesome
+pacman -Rs noto-fonts-emoji
+pacman -Rs noto-fonts
+fc-list
+less packages.txt
+pacman -Rs ttf-dejavu
+fc-match --verbose Mono
+fc-match --verbose Sans
+pacman -Rs ttf-freefont
+pacman -Rs bdf-unifont
+fc-match --verbose Serif
+sudo fff
+fc-list | less
+pacman -Rs ttf-roboto
+pacman -Q | less
+pacman -S ttf-croscore
+fc-cache -fv
+man fonts-conf
+cat fff.txt
+nano fff.txt 
+nano ~/.config/nano/nanorc
+fff
+echo 255 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness

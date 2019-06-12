@@ -74,12 +74,12 @@
         "format-alt": "{:%H:%M}"
     },
     "cpu": {
-        "format": "{usage:2}% 🖳", //⚛🚀©
+        "format": "{usage:2}% 🚀", //⚛🚀©
         "tooltip": true
     },
     "memory": { //  🗏🀰🁢▤𝌆䷁⣿🗂🖹🗄🖥🖳💻🖴 📀 💽 💿 🖸 💾 🖪 🖫 🖬 ✇ 🖭 🎞
         //"format": "{}% ䷁"
-        "format": "{used:.2}G ䷁",
+        "format": "{used:.2}G 💾",
         "format-alt": "{percentage}% ䷁"
         //"max-length": 2
     },
@@ -94,7 +94,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["☀","🌣", "🔆"] //🔅🔆🌞💡☀🌣☼❋✺✹✸✶✷✴✳✲✱❂⊛⛭
+        "format-icons": ["🔅","🔆"] //🔅🔆🌞💡☀🌣☼❋✺✹✸✶✷✴✳✲✱❂⊛⛭
     },
     "battery": {
         "states": {
@@ -102,13 +102,14 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 🗲",
-        "format-plugged": "{capacity}% 🔌",
-        "format-alt": "{time} {icon}",
+        "format-full": "{capacity}% F🔌",
+        "format-charging": "{capacity}% C🔌", //✳
+        "format-discharging": "{capacity}% 🔋"
+        //"format": "{time}% {icon}",
+        //"format-alt": "{time} {icon}",
+        //"format-plugged": "{capacity}% ",
         // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["1", "2", "3", "🔋", "⛫"]
+        //"format-icons":  ["1", "2", "3"] // based on capacity
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
