@@ -79,9 +79,9 @@
     },
     "memory": { //  🗏🀰🁢▤𝌆䷁⣿🗂🖹🗄🖥🖳💻🖴 📀 💽 💿 🖸 💾 🖪 🖫 🖬 ✇ 🖭 🎞
         //"format": "{}% ䷁"
-        "format": "{used:.2}G 💾",
-        "format-alt": "{percentage}% ䷁"
         //"max-length": 2
+        "format": "{used:.2}G 💾",
+        "format-alt": "{percentage}% 💾"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -117,7 +117,7 @@
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 🖧",
         "format-linked": "{ifname} (No IP) 📵",
         "format-disconnected": "Disconnected ✈", //⚠ ✈ 🛧 🛪
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "{ifname}: {ipaddr}/{cidr} 📡"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
