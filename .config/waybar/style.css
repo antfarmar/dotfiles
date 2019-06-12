@@ -1,38 +1,59 @@
+/******************/
+/* WAYBAR STYLING */
+/******************/
+
+/* Global */
 * {
     border: none;
     border-radius: 25px;
-    font-family: Inconsolata, xos4 Terminus, Arimo, Roboto, Noto Sans, Helvetica, sans-serif;
+    font-family:  Inconsolata, xos4 Terminus, Arimo, Roboto, Noto Sans, FreeSans, Helvetica, sans-serif;
     font-size: 12px;
     min-height: 0;
+}
+
+
+/* Global Consistency */
+ #workspaces, #window, #mode, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #idle_inhibitor {
+	/* margin-bottom: 0; */
+    /* margin-top: 8; */
+    /* margin-left: 10; */
+	/* padding-left: 10; */
+	/* padding-right: 10; */
+    margin: 0px 5px;
+    padding: 1px 5px;
+	border-radius: 25px;
+	transition: none;
+	color: #dddddd;
+	background: #222233;
 }
 
 window#waybar {
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     /* background-color: rgba(43, 48, 59, 0.0); */
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.99);
     color: #ffffff;
     transition-property: background-color;
-    transition-duration: .25s;
+    transition-duration: .5s;
 }
 
+/* ??? */
 window#waybar.hidden {
     opacity: 0.8;
 }
 
-/*
+/* Floating Window Mode  */
 window#waybar.empty {
     background-color: transparent;
 }
- */
 
-/*
+/* One Non-Floating Window */
 window#waybar.solo {
-    background-color: #2b3852;
+    background-color: rgba(38, 50, 56, 0.8); /*arc-dark*/
 }
- */
+
 
 window#waybar.Alacritty #window {
-    background-color: #282a2e;
+    background-color: rgba(38, 50, 56, 0.8); /*arc-dark*/
 }
 
 window#waybar.google-chrome #window {
@@ -47,48 +68,41 @@ window#waybar.code-oss #window {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
-    padding: 0 2px;
+    /* padding: 0 2px; */
     background-color: rgba(34, 34, 51, 0.8);
     color: #ffffff;
     border-bottom: 3px solid transparent;
 }
-
 #workspaces button.focused {
     background-color: #64727D;
     border-bottom: 3px solid #ffffff;
 }
-
 #workspaces button.urgent {
     background-color: #eb4d4b;
 }
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: #555566;
+}
 
+
+
+
+/* Resize Window Alert */
 #mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
-/* #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
-    padding: 0 5px;
-    margin: 0 0px;
-    color: #ffffff;
-} */
-
-#window, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
-	/* margin-bottom: 0; */
-    /* margin-top: 8; */
-    /* margin-left: 10; */
-	/* padding-left: 10; */
-	/* padding-right: 10; */
-    margin: 0px 2px;
-    padding: 1px 10px;
-	border-radius: 25px;
-	transition: none;
-	color: #dddddd;
-	background: #222233;
+    background-color: #eb4d4b;
+    border: 3px solid #ffffff;
 }
 
 
-/* Battery Low Warning Animation  */
+/* CPU Critical Temperature Alert */
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+
+/* Battery Low Warning Alert Animation  */
 @keyframes blink {
     to {
         background-color: #ffffff;
@@ -96,7 +110,7 @@ window#waybar.code-oss #window {
     }
 }
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background-color: #eb4d4b;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -106,12 +120,18 @@ window#waybar.code-oss #window {
 }
 #battery.discharging {
     color: #ffffff;
-    background-color: #80592e;
+    background-color: #a66f26;
 }
 #battery.charging {
     color: #ffffff;
     background-color: #26A65B;
 }
+
+
+
+/* --------------------------------------------- */
+
+
 
 /*
 #clock {

@@ -66,7 +66,6 @@ fdisk --help
 fdisk /dev/sda
 filefrag -v /swapfile
 find ~ -name '*.mkv'
-free -h
 git --help
 git add --help
 git add -f .vimrc
@@ -163,7 +162,6 @@ man libinput
 man ls
 man makepkg
 man modinfo
-man pacman
 man redshift
 man rm
 man sudo
@@ -373,7 +371,6 @@ timedatectl set-ntp true
 timedatectl status
 udevadm
 umount -R /mnt/win/
-uname -a
 unlink .git
 unzip archive.zip
 vainfo
@@ -387,7 +384,6 @@ vim wp.sh
 vimtutor
 whoami
 wifi-menu
-youtube-viewer
 youtube-viewer --examples
 youtube-viewer --help
 youtube-viewer --resolution=480p
@@ -396,7 +392,6 @@ youtube-viewer --tricks
 man 5 sway-bar
 man sway-ipc
 man swaymsg
-man pacman
 pacman -Sc
 paccache -h
 man imv
@@ -487,7 +482,6 @@ figlet
 figlet "message"
 systemctl status
 man systemctl
-man netctl
 netctl --help
 netctl status home
 netctl edit home
@@ -556,7 +550,6 @@ read -s pass; echo $pass | md5sum | base64 | cut -c -16 #generate a password
 file -s /dev/sda
 sudo file -s /dev/sda
 sudo file -s /dev/sda6
-df -h
 df --help
 man df
 len=20; tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${len} | xargs #generate password
@@ -568,9 +561,7 @@ man bash | awk '/^   Commands for Moving$/{print_this=1} /^   Programmable Compl
 bind -P
 bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}'
 bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}' #bash bound keys command shortcut
-neofetch
 man --html=google-chrome-stable man #open man page in browser html 
-df
 pacman -Rns otf-font-awesome
 pacman -Rs noto-fonts-emoji
 pacman -Rs noto-fonts
@@ -591,7 +582,6 @@ redshift -p
 light -G
 light -S 15
 light -S 20
-htop
 ./update_version.sh 
 pacman -S ttf-freefont
 pacman -Rs ttf-freefont
@@ -599,7 +589,6 @@ fc-cache -fv
 echo $EDITOR
 cat fff.txt
 su
-pacman -Syu --ignore linux
 EDITOR=nano fff
 EDITOR=vim fff
 systemctl daemon-reload
@@ -614,7 +603,6 @@ curl https://wttr.in?format=1
 curl https://wttr.in?format=2
 curl https://wttr.in?format=3
 curl https://wttr.in?format=4
-curl https://wttr.in?1
 env
 less
 light -H
@@ -622,8 +610,28 @@ source ~/.bashrc
 less packages.txt
 man light
 find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f #Tail of all logs in /var/log
-history
 git status
 nano ~/.config/nano/nanorc
-reset
 cat keys.txt 
+history
+nano ~/.config/waybar/config 
+neofetch
+curl https://wttr.in?1
+waybar --help
+waybar --version
+man netctl
+youtube-dl --help
+youtube-viewer
+killall dmenu
+netctl restart home5G
+sudo netctl restart home5G
+pacman -Syu --ignore linux
+uname -a
+man pacman
+pacman -Syu --ignore linux,linux-lts
+nano /etc/xdg/waybar/config 
+reset
+free -h
+df
+df -h
+htop

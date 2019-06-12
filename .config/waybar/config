@@ -10,22 +10,23 @@
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
 
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "format": "{icon} {name}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
 
+    // Resize Mode Alert
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -80,13 +81,13 @@
     "memory": { //  🗏🀰🁢▤𝌆䷁⣿🗂🖹🗄🖥🖳💻🖴 📀 💽 💿 🖸 💾 🖪 🖫 🖬 ✇ 🖭 🎞
         //"format": "{}% ䷁"
         //"max-length": 2
-        "format": "{used:.2}G 💾",
-        "format-alt": "{percentage}% 💾"
+        "format": "{used:.1f}G 💾",
+        "format-alt": "{percentage:3}% 💾"
     },
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
+        "critical-threshold": 70,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C 🌡{icon}"
         //"format-icons": ["❄", "✅", "🔥"] // 🆗✔
