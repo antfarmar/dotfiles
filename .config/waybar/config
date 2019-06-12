@@ -2,7 +2,7 @@
     "layer": "top",         // Waybar at top layer (over windows)
     "position": "bottom",   // Waybar position (top|bottom|left|right)
     //"height": 25,           // Waybar height (to be removed for auto height)
-    // "width": 1280,         // Waybar width
+    //"width": 1280,          // Waybar width
 
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
@@ -102,8 +102,8 @@
             "warning": 30,
             "critical": 15
         },
-        "format-full": "{capacity}% F🔌",
-        "format-charging": "{capacity}% C🔌", //✳
+        "format-full": "{capacity}% 🔌",
+        "format-charging": "{capacity}% 🔌", //✳
         "format-discharging": "{capacity}% 🔋"
         //"format": "{time}% {icon}",
         //"format-alt": "{time} {icon}",

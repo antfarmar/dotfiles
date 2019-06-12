@@ -36,22 +36,24 @@ alias pacman="sudo pacman"
 # alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles-git/.git --work-tree=$HOME'
 
 # Prompt
-#PS1='[\u@\h \W]\$ '
+# PS1='[\u@\h \W]\$ '
 PS1='\[\e[01;37m\]┌─[\!]──[\u]───[\[\e[01;33m\] \w \[\e[01;37m\]]\n└─╼>>\[\e[0m\] '
 
 
 # Environment Variables
+export EDITOR=nano
 # this one is global/system-wide so put in /etc/environment
-#export VDPAU_DRIVER=radeonsi
+# export VDPAU_DRIVER=radeonsi
 
 
+# TTY Conditionals
 # If running from tty1 (arch login) start a wm
 if [ "$(tty)" = "/dev/tty1" ]; then
     # Run a WM
     exec sway
 fi
 
-# If running from any tty (framebuffer virtual console)
+# If running from any tty (virtual framebuffer console)
 if [[ $(tty) =~ /dev/tty[1-9] ]]; then
     # Set the Linux Console font: /usr/share/kbd/consolefonts/
     setfont Lat2-Terminus16.psfu

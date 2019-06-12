@@ -123,13 +123,10 @@ less ~/packages.txt
 less PKGBUILD
 libinput --help
 libinput debug-events
-light -G
 light -h
 light -S 0
 light -S 10
 light -S 100
-light -S 15
-light -S 20
 light -S 25
 light -S 50
 ln -s .dotfiles-git/.git .git
@@ -164,7 +161,6 @@ man grim
 man history
 man imv
 man libinput
-man light
 man ls
 man makepkg
 man modinfo
@@ -284,10 +280,8 @@ partx
 partx --help
 partx --show
 pavucontrol
-printenv
 ps -aumaf
 python
-redshift -p
 redshift -P -O 5000
 redshift -x
 rm ~/.local/share/fff/trash/*
@@ -304,7 +298,6 @@ speaker-test -D hdmi:CARD=HDMI,DEV=0 -c 2
 speaker-test -D sysdefault:CARD=Generic -c 2
 ssh -T git@github.com
 ssh-add ~/.ssh/id_rsa
-su
 sudo --help
 sudo -s
 sudo /etc/systemd/journald.conf
@@ -370,7 +363,6 @@ swaymsg -t get_inputs
 swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
 systemctl
 systemctl | less
-systemctl daemon-reload
 systemctl enable netctl
 systemctl reboot
 systemctl suspend
@@ -436,10 +428,8 @@ echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 echo "$((1+2))"
 man xargs
 curl cht.sh/xargs
-redshift -p
 git commit --help
 git status
-redshift -p
 redshift -P -O 5000
 redshift -P -O 5000 &
 pacman -Qi wlroots
@@ -453,14 +443,12 @@ upower --show-info
 upower --enumerate
 upower --dump
 pacman -S waybar
-pacman -S ttf-freefont
 pacman -S bdf-unifont
 pacman -S noto-fonts
 pacman -S noto-fonts-emoji
 lsd
 sway
 pacman -S alacritty-terminfo
-env
 curl wttr.in/:help
 curl wttr.in/
 echo $(seq 1 10)
@@ -492,7 +480,6 @@ until ping archlinux.org; do :; done
 until ping archlinux.org; do sleep 3; :; done
 grep ^Dirty /proc/meminfo
 python -m http.server
-source ~/.bashrc
 cat /proc/meminfo
 pacman -Qi
 pacman -S otf-font-awesome
@@ -501,7 +488,6 @@ telnet towel.blinkenlights.nl
 imv scrot.png
 figlet
 figlet "message"
-systemctl --user show-environment
 systemctl status
 man systemctl
 man netctl
@@ -588,12 +574,9 @@ man bash | awk '/^   Commands for Moving$/{print_this=1} /^   Programmable Compl
 bind -P
 bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}'
 bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}' #bash bound keys command shortcut
-htop
 neofetch
 man --html=google-chrome-stable man #open man page in browser html 
-pacman -Syu --ignore linux
 df
-curl https://wttr.in
 curl https://wttr.in?format=1
 pacman -Rns otf-font-awesome
 pacman -Rs noto-fonts-emoji
@@ -603,18 +586,39 @@ less packages.txt
 pacman -Rs ttf-dejavu
 fc-match --verbose Mono
 fc-match --verbose Sans
-pacman -Rs ttf-freefont
 pacman -Rs bdf-unifont
 fc-match --verbose Serif
-sudo fff
 fc-list | less
 pacman -Rs ttf-roboto
 pacman -Q | less
 pacman -S ttf-croscore
-fc-cache -fv
 man fonts-conf
-cat fff.txt
 nano fff.txt 
 nano ~/.config/nano/nanorc
-fff
 echo 255 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
+redshift -p
+man light
+light -G
+light -S 15
+light -S 20
+htop
+curl https://wttr.in
+./update_version.sh 
+pacman -S ttf-freefont
+pacman -Rs ttf-freefont
+fc-cache -fv
+echo $EDITOR
+cat fff.txt
+su
+pacman -Syu --ignore linux
+EDITOR=nano fff
+EDITOR=vim fff
+systemctl daemon-reload
+fff
+systemctl --user import-environment
+systemctl --user show-environment
+env
+printenv
+systemctl --user set-environment
+source ~/.bashrc
+sudo fff

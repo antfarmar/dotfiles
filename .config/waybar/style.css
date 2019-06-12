@@ -1,15 +1,16 @@
 * {
     border: none;
     border-radius: 25px;
-    font-family: xos4 Terminus, Roboto, Arimo, Noto Sans, Helvetica, sans-serif;
-    font-size: 10px;
+    font-family: Inconsolata, xos4 Terminus, Arimo, Roboto, Noto Sans, Helvetica, sans-serif;
+    font-size: 12px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.8);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-    color: #dddddd;
+    /* background-color: rgba(43, 48, 59, 0.0); */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
     transition-property: background-color;
     transition-duration: .25s;
 }
@@ -46,8 +47,8 @@ window#waybar.code-oss #window {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
+    padding: 0 2px;
+    background-color: rgba(34, 34, 51, 0.8);
     color: #ffffff;
     border-bottom: 3px solid transparent;
 }
@@ -83,7 +84,33 @@ window#waybar.code-oss #window {
 	border-radius: 25px;
 	transition: none;
 	color: #dddddd;
-	background: #222222;
+	background: #222233;
+}
+
+
+/* Battery Low Warning Animation  */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#battery.discharging {
+    color: #ffffff;
+    background-color: #80592e;
+}
+#battery.charging {
+    color: #ffffff;
+    background-color: #26A65B;
 }
 
 /*
