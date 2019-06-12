@@ -1,12 +1,16 @@
+# Load the defaults
 $include /etc/inputrc
 
-#set bell-style none
-
+# Down/Up arrow keys for history search
 "\e[A": history-search-backward
 "\e[B": history-search-forward
-#j: history-search-forward
-#k: history-search-backward
 
+# Cycles through the available tab auto-completions
+Control-j: menu-complete
+Control-h: menu-complete-backward
+
+# Set Options
+#set bell-style none
 set colored-stats On
 set visible-stats On
 set mark-symlinked-directories On

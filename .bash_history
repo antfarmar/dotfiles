@@ -101,7 +101,6 @@ git rm --cached .vimrc
 git rm --cached *
 git rm --help
 git show
-git status
 google-chrome-stable --incognito &
 google-chrome-stable &
 grim -g "$(slurp)" scrot.png
@@ -417,7 +416,6 @@ for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
 imv .
 du -hs ~/pics
 du -hs
-git status
 git push
 pacman -S upower
 upower --help
@@ -429,7 +427,6 @@ echo "$((1+2))"
 man xargs
 curl cht.sh/xargs
 git commit --help
-git status
 redshift -P -O 5000
 redshift -P -O 5000 &
 pacman -Qi wlroots
@@ -528,7 +525,6 @@ man hier #linux filesystem hierarchy
 cat /etc/issue 
 systemd-analyze time
 sudo dd if=/dev/mem | cat | strings #look at strings in ram RAM
-reset
 man fc
 read day month year <<< $(date +'%d %m %y')
 disown --help
@@ -554,7 +550,6 @@ sudo find / -type f -size +500M
 find / -type f -size +500M #find large files
 find ~ -type f -size +500M #find large files
 nl .bash_history 
-history
 perl -e 'print "P1\n256 256\n", map {$_&($_>>8)?1:0} (0..0xffff)' | display #draw sierpinski triangle
 display
 read -s pass; echo $pass | md5sum | base64 | cut -c -16 #generate a password
@@ -568,7 +563,6 @@ len=20; tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${len} | xargs #generate pass
 sort ~/.bash_history | uniq -c | sort -n | tail -n 10 #n most used commands
 man console_codes
 man bash
-cat keys.txt 
 man bash | awk '/^   Commands for Moving$/{print_this=1} /^   Programmable Completion$/{print_this=0} print_this==1{sub(/^   /,""); print}' | less
 man bash | awk '/^   Commands for Moving$/{print_this=1} /^   Programmable Completion$/{print_this=0} print_this==1{sub(/^   /,""); print}' | less #bash commands
 bind -P
@@ -577,12 +571,10 @@ bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;
 neofetch
 man --html=google-chrome-stable man #open man page in browser html 
 df
-curl https://wttr.in?format=1
 pacman -Rns otf-font-awesome
 pacman -Rs noto-fonts-emoji
 pacman -Rs noto-fonts
 fc-list
-less packages.txt
 pacman -Rs ttf-dejavu
 fc-match --verbose Mono
 fc-match --verbose Sans
@@ -594,15 +586,12 @@ pacman -Q | less
 pacman -S ttf-croscore
 man fonts-conf
 nano fff.txt 
-nano ~/.config/nano/nanorc
 echo 255 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 redshift -p
-man light
 light -G
 light -S 15
 light -S 20
 htop
-curl https://wttr.in
 ./update_version.sh 
 pacman -S ttf-freefont
 pacman -Rs ttf-freefont
@@ -617,8 +606,24 @@ systemctl daemon-reload
 fff
 systemctl --user import-environment
 systemctl --user show-environment
-env
 printenv
 systemctl --user set-environment
-source ~/.bashrc
 sudo fff
+curl https://wttr.in
+curl https://wttr.in?format=1
+curl https://wttr.in?format=2
+curl https://wttr.in?format=3
+curl https://wttr.in?format=4
+curl https://wttr.in?1
+env
+less
+light -H
+source ~/.bashrc
+less packages.txt
+man light
+find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f #Tail of all logs in /var/log
+history
+git status
+nano ~/.config/nano/nanorc
+reset
+cat keys.txt 

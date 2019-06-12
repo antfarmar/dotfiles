@@ -1,15 +1,23 @@
 # ~/.bashrc
-echo "Processing ~/.bashrc..."
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Print a message
+echo "Processing ~/.bashrc..."
+
+# PS1 Prompt
+# PS1='[\u@\h \W]\$ '
+PS1='\[\e[01;37m\]┌─[\!]──[\u]───[\[\e[01;33m\] \w \[\e[01;37m\]]\n└─╼>>\[\e[0m\] '
+
+# Shell Options
 # Allows you to cd into directory by typing the directory name.
 shopt -s autocd
 # Append to the history instead of overwriting
 shopt -s histappend
 # Use one command per line
 shopt -s cmdhist
+
 # History: Unlimited
 HISTFILESIZE=
 HISTSIZE=
@@ -24,7 +32,8 @@ HISTIGNORE="cd*:cp*:rm*:mv*:ls:ls *:la*:ll*:ps:bg:fg:history -d*"
 # source: https://unix.stackexchange.com/a/18443
 PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 
-# aliases
+
+# Aliases
 alias cd..='cd ..'
 alias ls='ls -hFN --group-directories-first --color=auto'
 alias la='ls -A'
@@ -35,15 +44,22 @@ alias grep="grep --color=auto"
 alias pacman="sudo pacman"
 # alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles-git/.git --work-tree=$HOME'
 
-# Prompt
-# PS1='[\u@\h \W]\$ '
-PS1='\[\e[01;37m\]┌─[\!]──[\u]───[\[\e[01;33m\] \w \[\e[01;37m\]]\n└─╼>>\[\e[0m\] '
-
 
 # Environment Variables
-export EDITOR=nano
 # this one is global/system-wide so put in /etc/environment
 # export VDPAU_DRIVER=radeonsi
+# preferred terminal editor
+export EDITOR=nano
+# Colors for ALL grep commands (grep, egrep, zgrep)
+export GREP_OPTIONS='--color=auto'
+# Add color in manpages for less
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
 
 
 # TTY Conditionals
