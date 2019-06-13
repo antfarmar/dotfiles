@@ -165,7 +165,7 @@ floating_modifier $mod normal
 bindsym $mod+c reload
 
 # lock the screen
-bindsym $mod+Alt+l exec swaylock -Ffeli ~/pics/arch-arc-dark.png -c 383c4a
+bindsym $mod+Alt+l exec swaylock -Ffeli ~/pics/walls/arch-arc-dark.png -c 383c4a
 
 # suspend the computer (sleep)
 bindsym $mod+Shift+s exec systemctl suspend

@@ -25,7 +25,6 @@ cat /etc/fstab
 cat /etc/systemd/sleep.conf
 cat /proc/acpi/wakeup
 cat /proc/asound/modules
-cat /proc/cmdline
 cat /proc/sys/kernel/sysrq
 cat /proc/sys/vm/swappiness
 cat /sys/class/backlight/amdgpu_bl0/brightness
@@ -42,8 +41,6 @@ curl cht.sh/:help
 curl cht.sh/:list
 curl cht.sh/find
 curl cht.sh/ln
-dmesg
-dmesg | less
 du -ch
 du -h /etc/
 du -ch /etc/
@@ -53,7 +50,6 @@ echo $PATH
 echo $PS1
 echo 10 > /sys/class/backlight/amdgpu_bl0/brightness
 echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
-elinks
 exec bash
 export VDPAU_DRIVER=radeonsi
 fallocate -l 4G /swapfile
@@ -155,7 +151,6 @@ man history
 man imv
 man libinput
 man makepkg
-man modinfo
 man redshift
 man rm
 man sudo
@@ -201,7 +196,6 @@ mpv *
 mpv https://www.youtube.com/watch?v=UcFQSqaAPXM
 nano .bash_history
 nano .inputrc
-nano /boot/loader/entries/arch.conf
 nano /etc/makepkg.conf
 nano /etc/mkinitcpio.conf
 nano /etc/mkinitcpio.d/linux.preset
@@ -219,7 +213,6 @@ nano ~/.config/environment.d/envvars.conf
 nano ~/.config/gtk-3.0/settings.ini
 nano ~/.config/redshift.conf
 nano ~/.config/sway/
-nano ~/.config/sway/config
 nano ~/.vimrc
 nano ~/scripts/wp.sh
 pacman -Q
@@ -304,7 +297,6 @@ sudo fallocate -l 4G /swapfile
 sudo fdisk /dev/sda
 sudo filefrag -v /swapfile
 sudo gpm -k
-sudo htop
 sudo journalctl --vacuum-size=50M
 sudo libinput debug-events
 sudo mkdir /etc/pacman.d/hooks/
@@ -319,7 +311,6 @@ sudo modprobe amdgpu
 sudo modprobe snd_hda_intel index=1
 sudo mount /dev/sda3 /mnt/win/
 sudo nano /boot/loader/entries/arch-lts.conf
-sudo nano /boot/loader/entries/arch.conf
 sudo nano /etc/fstab
 sudo nano /etc/makepkg.conf
 sudo nano /etc/mkinitcpio.conf
@@ -341,7 +332,6 @@ sudo sensors -s
 sudo sensors-detect
 sudo shutdown now
 sudo swapon /swapfile
-sudo systemctl daemon-reload
 sudo systemctl hibernate
 sudo systemctl suspend
 sudo umount -R /mnt/
@@ -354,7 +344,6 @@ swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
 systemctl
 systemctl | less
 systemctl enable netctl
-systemctl suspend
 systool -m amdgpu -av
 systool -m snd_hda_intel
 systool -m snd_hda_intel -av
@@ -411,7 +400,6 @@ curl cht.sh/xargs
 git commit --help
 redshift -P -O 5000
 pacman -Qi wlroots
-dmesg | less
 cat /proc/loadavg
 ip route get 1.1.1.1
 ip link
@@ -451,7 +439,6 @@ timeout 3s ping archlinux.org
 cat /dev/urandom | hexdump -C | grep "ca fe"
 cat /dev/urandom
 sed -n 123p .bash_history
-ping archlinux.org
 until ping archlinux.org; do :; done
 until ping archlinux.org; do sleep 3; :; done
 grep ^Dirty /proc/meminfo
@@ -465,7 +452,6 @@ imv scrot.png
 figlet
 figlet "message"
 systemctl status
-man systemctl
 netctl --help
 netctl status home
 netctl edit home
@@ -570,7 +556,6 @@ cat fff.txt
 su
 EDITOR=nano fff
 EDITOR=vim fff
-systemctl daemon-reload
 systemctl --user import-environment
 systemctl --user show-environment
 systemctl --user set-environment
@@ -641,32 +626,61 @@ imv *
 man ls
 man grep
 source ~/.bashrc
-lsd
 lsf
 redshift -p
 man disown
-history
-systemctl reboot
-redshift -P -O 5000 &
-htop
-uname -a
 nano
-fff
-sudo netctl switch-to home2G
 neofetch
 man pacman
 less packages.txt
 pacman -Syu
 cat /var/log/pacman.log
-reset
 clear
 pacman -Qt
 pacman -Qe
 pacman -Qd
 pacman -Qdtq 
 nmon
-ls.
-git status
 light -G
 light -S 10
 light -S 5
+man modinfo
+man modprobe
+man systemctl
+sudo netctl switch-to home2G
+systemctl reboot
+dmesg | less
+systemctl daemon-reload
+sudo systemctl daemon-reload
+ping archlinux.org
+sudo htop
+uname -a
+nano /boot/loader/entries/arch.conf
+sudo nano /boot/loader/entries/arch.conf
+nano .bashrc 
+reset
+systemctl hibernate
+systemctl suspend
+elinks
+ls.
+lsd
+redshift -P -O 5000 &
+dmesg
+cat /proc/cmdline
+man amdgpu
+cat /proc/sys/vm/laptop_mode
+cat /etc/sysctl.d/laptop.conf
+cat /etc/sysconfig/laptop-mode
+nano ~/.config/sway/config
+swaymsg "output * dpms on"
+journalctl -f
+fff
+cat /etc/systemd/logind.conf
+htop
+history
+nano /etc/systemd/logind.conf
+sudo nano /etc/systemd/logind.conf
+systemctl restart systemd-logind.service
+sudo systemctl restart systemd-logind.service
+nano ~/.config/waybar/config 
+git status
