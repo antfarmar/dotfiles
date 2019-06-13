@@ -119,7 +119,6 @@ libinput --help
 libinput debug-events
 light -h
 light -S 0
-light -S 10
 light -S 100
 light -S 25
 light -S 50
@@ -411,7 +410,6 @@ man xargs
 curl cht.sh/xargs
 git commit --help
 redshift -P -O 5000
-redshift -P -O 5000 &
 pacman -Qi wlroots
 dmesg | less
 cat /proc/loadavg
@@ -448,7 +446,6 @@ history --help
 ps aux
 ps aux | sort -nrk 3 | head
 ps aux | sort -b -k 4 | tail
-clear
 dd if=/dev/zero of=/dev/null bs=1M count=1000
 timeout 3s ping archlinux.org
 cat /dev/urandom | hexdump -C | grep "ca fe"
@@ -485,7 +482,6 @@ netctl stop home5G
 netctl disable home
 sudo netctl disable home
 netctl start home2G
-sudo netctl switch-to home2G
 sudo netctl switch-to home5G
 netctl enable home5G
 sudo netctl enable home5G
@@ -563,8 +559,6 @@ pacman -S ttf-croscore
 man fonts-conf
 nano fff.txt
 echo 255 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
-redshift -p
-light -G
 light -S 15
 light -S 20
 ./update_version.sh
@@ -577,7 +571,6 @@ su
 EDITOR=nano fff
 EDITOR=vim fff
 systemctl daemon-reload
-fff
 systemctl --user import-environment
 systemctl --user show-environment
 systemctl --user set-environment
@@ -589,13 +582,10 @@ curl https://wttr.in?format=3
 curl https://wttr.in?format=4
 less
 light -H
-less packages.txt
 man light
-git status
 nano ~/.config/nano/nanorc
 cat keys.txt
 nano ~/.config/waybar/config
-neofetch
 curl https://wttr.in?1
 waybar --help
 waybar --version
@@ -605,15 +595,12 @@ youtube-viewer
 killall dmenu
 netctl restart home5G
 pacman -Syu --ignore linux
-uname -a
-man pacman
 free -h
 df
 df -h
 nano /etc/xdg/waybar/config
 pacman -Syu --ignore linux,linux-lts
 sudo netctl restart home5G
-systemctl reboot
 unzip archive.zip
 for f in *; do mv "$f" "${f// /-}"; done
 man du
@@ -632,9 +619,7 @@ pacman -Ss > packages.txt
 pacman -S asciiquarium
 asciiquarium
 cmatrix
-less packages.txt
 systemd-analyze blame
-pacman -Syu
 find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f #Tail of all logs in /var/log
 printenv
 env
@@ -649,16 +634,39 @@ grim -h
 grim screen-$(date +'%y%m%d-%H%M%S').png
 date --help
 grim -t jpeg screen-$(date +'%y%m%d-%H%M%S').jpg
-htop
-history
 mount
 mount | column -t
-reset
 sudo ls /lost+found/
 imv *
-lsd
-ls.
 man ls
 man grep
 source ~/.bashrc
+lsd
 lsf
+redshift -p
+man disown
+history
+systemctl reboot
+redshift -P -O 5000 &
+htop
+uname -a
+nano
+fff
+sudo netctl switch-to home2G
+neofetch
+man pacman
+less packages.txt
+pacman -Syu
+cat /var/log/pacman.log
+reset
+clear
+pacman -Qt
+pacman -Qe
+pacman -Qd
+pacman -Qdtq 
+nmon
+ls.
+git status
+light -G
+light -S 10
+light -S 5
