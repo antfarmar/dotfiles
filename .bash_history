@@ -35,7 +35,6 @@ cd dotfiles/
 cd google-chrome/
 chmod +x wp.sh
 chmod 600 /swapfile
-cmatrix
 code &
 cp "$(imv .)" ~/pics/paper
 curl cht.sh/
@@ -43,10 +42,8 @@ curl cht.sh/:help
 curl cht.sh/:list
 curl cht.sh/find
 curl cht.sh/ln
-date
 dmesg
 dmesg | less
-du -h
 du -ch
 du -h /etc/
 du -ch /etc/
@@ -103,7 +100,6 @@ git show
 google-chrome-stable --incognito &
 google-chrome-stable &
 grim -g "$(slurp)" scrot.png
-grim -h
 history -d 506
 history -n
 history -r
@@ -159,7 +155,6 @@ man grim
 man history
 man imv
 man libinput
-man ls
 man makepkg
 man modinfo
 man redshift
@@ -270,7 +265,6 @@ pacman -S youtube-viewer
 pacman -Ss alsa
 pacman -Ss sway
 pacman -Ss Xwayland
-pacman -Syu
 pacman -Syy
 pacmd list-sinks
 partx
@@ -361,9 +355,7 @@ swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
 systemctl
 systemctl | less
 systemctl enable netctl
-systemctl reboot
 systemctl suspend
-systemd-analyze blame
 systool -m amdgpu -av
 systool -m snd_hda_intel
 systool -m snd_hda_intel -av
@@ -372,7 +364,6 @@ timedatectl status
 udevadm
 umount -R /mnt/win/
 unlink .git
-unzip archive.zip
 vainfo
 vdpauinfo
 vim
@@ -402,7 +393,6 @@ imv
 tar -xzvf ~/walls.tgz ~/pics/
 curl cht.sh/tar
 tar -xzvf ~/walls.tgz
-for f in *; do mv "$f" "${f// /-}"; done
 for f in *; do mv "$f" "${f//_/-}"; done
 tar -czvf ~/walls.tgz .
 tar -czvf ~/walls.tgz *
@@ -410,13 +400,11 @@ tar -ztvf ~/walls.tgz
 for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
 imv .
 du -hs ~/pics
-du -hs
 git push
 pacman -S upower
 upower --help
 upower --dump
 upower --enumerate
-cal
 echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 echo "$((1+2))"
 man xargs
@@ -438,7 +426,6 @@ pacman -S waybar
 pacman -S bdf-unifont
 pacman -S noto-fonts
 pacman -S noto-fonts-emoji
-lsd
 sway
 pacman -S alacritty-terminfo
 curl wttr.in/:help
@@ -516,7 +503,7 @@ awk '!x[$0]++' .bash_history #remove duplicates
 history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head #top most used commands
 man hier
 man hier #linux filesystem hierarchy
-cat /etc/issue 
+cat /etc/issue
 systemd-analyze time
 sudo dd if=/dev/mem | cat | strings #look at strings in ram RAM
 man fc
@@ -525,7 +512,6 @@ disown --help
 du -s * | sort -n | tail
 du -sh * | sort -n | tail #show 10 biggest/largest files
 du -s * | sort -n | tail #show 10 biggest/largest files
-man du
 for code in {0..255}; do echo -e "\e[38;05;${code}m $code: Test"; done #show numbers for bash 256 colors
 watch -t -n1 "date +%T|figlet"
 watch -t -n1 "date +%T|figlet" #terminal clock
@@ -538,12 +524,11 @@ find ~ -mmin 1 -type f
 showkey
 sudo showkey
 showkey --help
-showkey -a
 find / -type f -size +500M
 sudo find / -type f -size +500M
 find / -type f -size +500M #find large files
 find ~ -type f -size +500M #find large files
-nl .bash_history 
+nl .bash_history
 perl -e 'print "P1\n256 256\n", map {$_&($_>>8)?1:0} (0..0xffff)' | display #draw sierpinski triangle
 display
 read -s pass; echo $pass | md5sum | base64 | cut -c -16 #generate a password
@@ -561,7 +546,7 @@ man bash | awk '/^   Commands for Moving$/{print_this=1} /^   Programmable Compl
 bind -P
 bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}'
 bind -P | grep "can be found" | sort | awk '{printf "%-40s", $1} {for(i=6;i<=NF;i++){printf "%s ", $i}{printf"\n"}}' #bash bound keys command shortcut
-man --html=google-chrome-stable man #open man page in browser html 
+man --html=google-chrome-stable man #open man page in browser html
 pacman -Rns otf-font-awesome
 pacman -Rs noto-fonts-emoji
 pacman -Rs noto-fonts
@@ -576,13 +561,13 @@ pacman -Rs ttf-roboto
 pacman -Q | less
 pacman -S ttf-croscore
 man fonts-conf
-nano fff.txt 
+nano fff.txt
 echo 255 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 redshift -p
 light -G
 light -S 15
 light -S 20
-./update_version.sh 
+./update_version.sh
 pacman -S ttf-freefont
 pacman -Rs ttf-freefont
 fc-cache -fv
@@ -595,7 +580,6 @@ systemctl daemon-reload
 fff
 systemctl --user import-environment
 systemctl --user show-environment
-printenv
 systemctl --user set-environment
 sudo fff
 curl https://wttr.in
@@ -603,18 +587,14 @@ curl https://wttr.in?format=1
 curl https://wttr.in?format=2
 curl https://wttr.in?format=3
 curl https://wttr.in?format=4
-env
 less
 light -H
-source ~/.bashrc
 less packages.txt
 man light
-find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f #Tail of all logs in /var/log
 git status
 nano ~/.config/nano/nanorc
-cat keys.txt 
-history
-nano ~/.config/waybar/config 
+cat keys.txt
+nano ~/.config/waybar/config
 neofetch
 curl https://wttr.in?1
 waybar --help
@@ -624,14 +604,61 @@ youtube-dl --help
 youtube-viewer
 killall dmenu
 netctl restart home5G
-sudo netctl restart home5G
 pacman -Syu --ignore linux
 uname -a
 man pacman
-pacman -Syu --ignore linux,linux-lts
-reset
 free -h
 df
 df -h
+nano /etc/xdg/waybar/config
+pacman -Syu --ignore linux,linux-lts
+sudo netctl restart home5G
+systemctl reboot
+unzip archive.zip
+for f in *; do mv "$f" "${f// /-}"; done
+man du
+du -hs
+du -h .
+for f in *; do mv "$f" "${f//.png/.jpg}"; done
+for file in *; do convert $file -quality 90 $file; done
+file *
+du -h
+showkey -a
+nano .inputrc
+sudo showkey -s
+sudo showkey
+pacman -Ss
+pacman -Ss > packages.txt
+pacman -S asciiquarium
+asciiquarium
+cmatrix
+less packages.txt
+systemd-analyze blame
+pacman -Syu
+find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f #Tail of all logs in /var/log
+printenv
+env
+for file in *; do convert $file -resize 1366x768! $file; done
+convert image.jpg -resize 1366x768! image.jpg
+cal
+date
+du
+du -hs *
+grim -t jpeg -q 100 screen-$(date +'%y%m%d-%H%M%S').jpg
+grim -h
+grim screen-$(date +'%y%m%d-%H%M%S').png
+date --help
+grim -t jpeg screen-$(date +'%y%m%d-%H%M%S').jpg
 htop
-nano /etc/xdg/waybar/config 
+history
+mount
+mount | column -t
+reset
+sudo ls /lost+found/
+imv *
+lsd
+ls.
+man ls
+man grep
+source ~/.bashrc
+lsf

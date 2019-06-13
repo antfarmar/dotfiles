@@ -91,7 +91,7 @@ output eDP-1 resolution 1366x768 position 0,0
 ## Wallpaper
 # Default (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/pics/paper stretch
+output * bg ~/pics/walls/paper stretch
 
 # ----------------------------------------------------------------------------
 
@@ -140,8 +140,9 @@ bindsym $mod+Shift+w exec $wallpaperchange
 # take a screenshot (using grim)
 #set $grim ~/scripts/grim.sh
 #set $slurp ~/scripts/slurp.sh
-bindsym Print exec grim ~/scrot.png
-bindsym $mod+Print exec grim -g "$(slurp)" ~/scrot.png
+set $screendir ~/pics/screens
+bindsym Print exec grim $screendir/screen-$(date +'%y%m%d-%H%M%S').png
+bindsym Shift+Print exec grim -g "$(slurp)" $screendir/screen-$(date +'%y%m%d-%H%M%S').png
 
 # start a terminal
 bindsym $mod+Return exec $term

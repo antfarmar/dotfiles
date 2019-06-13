@@ -36,10 +36,13 @@ PROMPT_COMMAND="history -n; history -w; history -c; history -r; $PROMPT_COMMAND"
 # Aliases
 alias cd..='cd ..'
 alias ls='ls -hFN --group-directories-first --color=auto'
-alias la='ls -A'
-alias ll='ls -lG'
-alias lla='ls -AGl'
-alias lsd='ls -d .*'
+alias la='ls -AF'
+alias ll='ls -lFG'
+alias lla='ls -lAFG'
+alias lsf='ls -lAFG | grep -v /' #files only
+alias lsd='ls -dF */'   #directories only
+alias ls.='ls -dF .*'   #dots only
+# alias lsf='find . -maxdepth 1 -type f -ls' #files only
 alias grep="grep --color=auto"
 alias pacman="sudo pacman"
 # alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles-git/.git --work-tree=$HOME'
@@ -50,8 +53,6 @@ alias pacman="sudo pacman"
 # export VDPAU_DRIVER=radeonsi
 # preferred terminal editor
 export EDITOR=nano
-# Colors for ALL grep commands (grep, egrep, zgrep)
-export GREP_OPTIONS='--color=auto'
 # Add color in manpages for less
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
