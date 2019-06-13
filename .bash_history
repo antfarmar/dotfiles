@@ -629,9 +629,9 @@ pacman -Syu --ignore linux
 uname -a
 man pacman
 pacman -Syu --ignore linux,linux-lts
-nano /etc/xdg/waybar/config 
 reset
 free -h
 df
 df -h
 htop
+nano /etc/xdg/waybar/config 

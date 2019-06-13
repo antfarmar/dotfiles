@@ -25,39 +25,15 @@
              "default": ""
          }
      },
-
+    "sway/window": {
+        "format": " {}",
+        "max-length": 50,
+        "tooltip": false
+    },
     // Resize Mode Alert
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-
-    //"mpd": {
-    //    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-    //    "format-disconnected": "Disconnected ",
-    //    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-    //    "unknown-tag": "N/A",
-    //    "interval": 2,
-    //    "consume-icons": {
-    //        "on": " "
-    //    },
-    //    "random-icons": {
-    //        "off": "<span color=\"#f53c3c\"></span> ",
-    //        "on": " "
-    //    },
-    //    "repeat-icons": {
-    //        "on": " "
-    //    },
-    //    "single-icons": {
-    //        "on": "1 "
-    //    },
-    //    "state-icons": {
-    //        "paused": "",
-    //        "playing": ""
-    //    },
-    //    "tooltip-format": "MPD (connected)",
-    //    "tooltip-format-disconnected": "MPD (disconnected)"
-    //},
-
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -75,46 +51,60 @@
         "format-alt": "{:%H:%M}"
     },
     "cpu": {
-        "format": "{usage:2}% 🚀", //⚛🚀©
+        "format": "{usage:2}% ",
+        //"format": "{usage:2}% 🚀", //⚛🚀©
         "tooltip": true
     },
     "memory": { //  🗏🀰🁢▤𝌆䷁⣿🗂🖹🗄🖥🖳💻🖴 📀 💽 💿 🖸 💾 🖪 🖫 🖬 ✇ 🖭 🎞
         //"format": "{}% ䷁"
-        //"max-length": 2
-        "format": "{used:.1f}G 💾",
-        "format-alt": "{percentage:3}% 💾"
+        "format": "{used:.1f}G ",
+        "format-alt": "{percentage:3}% "
+        //"format": "{used:.1f}G ▤",
+        //"format-alt": "{percentage:3}% ▤"
     },
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 70,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C 🌡{icon}"
-        //"format-icons": ["❄", "✅", "🔥"] // 🆗✔
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+        //"format-icons": ["🌡", "🌡", "🌡"]
+        //"format-icons": ["❄", "✅", "🔥"] // 🆗✔🌡
     },
     "backlight": {
         // "device": "acpi_video1",
+        "on-click": "light -S 15",
+        "on-click-right": "light -S 20",
+        "on-scroll-up": "light -A 1",
+        "on-scroll-down": "light -U 1",
         "format": "{percent}% {icon}",
-        "format-icons": ["🔅","🔆"] //🔅🔆🌞💡☀🌣☼❋✺✹✸✶✷✴✳✲✱❂⊛⛭
+        "format-icons": ["✶","✷"]
+        //"format-icons": ["", ""]
+        //"format-icons": ["🔅","🔆"] //🔅🔆🌞💡☀🌣☼❋✺✹✸✶✷✴✳✲✱❂⊛⛭
     },
     "battery": {
         "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
+            "good": 80,
+            "warning": 40,
+            "critical": 20
         },
-        "format-full": "{capacity}% 🔌",
-        "format-charging": "{capacity}% 🔌", //✳
-        "format-discharging": "{capacity}% 🔋"
+        "format-full": "{capacity}% ",
+        "format-charging": "{capacity}% ",
+        "format-discharging": "{capacity}% "
+        //"format-full": "{capacity}% 🔌",
+        //"format-charging": "{capacity}% 🔌",
+        //"format-discharging": "{capacity}% 🔋"
+        //"format": "{capacity}% {icon}",
         //"format": "{time}% {icon}",
         //"format-alt": "{time} {icon}",
         //"format-plugged": "{capacity}% ",
         // "format-good": "", // An empty format will hide the module
-        //"format-icons":  ["1", "2", "3"] // based on capacity
+        //"format-icons": ["", "", "", "", ""] // based on capacity
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) 📡", //📶🛰
+        "format-wifi": "{essid} ({signalStrength}%) ", //📶🛰📡
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} 🖧",
         "format-linked": "{ifname} (No IP) 📵",
         "format-disconnected": "Disconnected ✈", //⚠ ✈ 🛧 🛪
@@ -124,17 +114,18 @@
         // "scroll-step": 1, // %, can be a float
         "format": "{volume:3}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-muted": "🔇 {format_source}",
-        "format-source": "{volume}% 🎤",
-        "format-source-muted": "🔇",
+        "format-muted": " {format_source}", //🔇
+        "format-source": "{volume}% ", //🎙🎤
+        "format-source-muted": "",
         "format-icons": {
-            "headphones": "🎧",
+            "headphones": "", //🎧
             "handsfree": "",
             "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["🔈", "🔉", "🔊"] // 🕫 🕬
+            "default": ["", "", ""]
+            //"default": ["🔈", "🔉", "🔊"] // 🕫 🕬
         },
         "on-click": "pavucontrol"
     },

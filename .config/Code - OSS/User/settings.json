@@ -6,7 +6,6 @@
     "editor.smoothScrolling": true,
     "editor.cursorBlinking": "solid",
     "editor.cursorSmoothCaretAnimation": true,
-    "editor.cursorStyle": "block",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
