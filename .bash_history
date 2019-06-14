@@ -1,4 +1,3 @@
-./update_version.sh
 ./wp.sh
 /etc/systemd/journald.conf
 /sys/class/backlight/amdgpu_bl0/
@@ -8,7 +7,6 @@ alsactl
 alsactl -f /var/lib/alsa/asound.state store
 alsamixer
 amixer sset Headphone unmute
-amixer sset Master unmute
 amixer sset Speaker unmute
 aplay -l
 aplay -L | grep :CARD
@@ -71,7 +69,6 @@ git add .vimrc
 git checkout -- .bash_history
 git commit --help
 git commit -a
-git commit -a -m "edit"
 git commit -m "initial commit"
 git config --global credential.helper 'cache --timeout=36000'
 git config --global user.email "15778096+antfarmar@users.noreply.github.com"
@@ -84,8 +81,6 @@ git pull
 git pull --help
 git push --help
 git push -u origin master
-git push origin master
-git push origin master
 git rebase
 git remote add origin https://github.com/antfarmar/dotfiles.git
 git reset --hard
@@ -135,10 +130,8 @@ lsinitcpio -a /boot/initramfs-linux.img
 lsmod
 lsmod | grep '^snd' | column -t
 lsmod | less
-lspci
 lspci -knn|grep -iA2 audio
 lzop
-makepg -si
 makepkg --clean
 man 5 sway
 man 5 sway-input
@@ -148,9 +141,7 @@ man fancontrol
 man fdisk
 man grim
 man history
-man imv
 man libinput
-man makepkg
 man redshift
 man rm
 man sudo
@@ -250,7 +241,6 @@ pacman -S vlc
 pacman -S vulkan-radeon
 pacman -S wget
 pacman -S wl-clipboard
-pacman -S xf86-video-amdgpu
 pacman -S xorg
 pacman -S xorg-server-xwayland
 pacman -S youtube-viewer
@@ -373,7 +363,6 @@ man sway-ipc
 man swaymsg
 pacman -Sc
 paccache -h
-man imv
 imv scrot.png
 swaymsg -t get_inputs
 swaymsg -t get_outputs
@@ -415,7 +404,6 @@ pacman -S noto-fonts-emoji
 sway
 pacman -S alacritty-terminfo
 curl wttr.in/:help
-curl wttr.in/
 echo $(seq 1 10)
 seq 1 10 | dmenu
 ls -1 | wc -l
@@ -547,7 +535,6 @@ nano fff.txt
 echo 255 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 light -S 15
 light -S 20
-./update_version.sh
 pacman -S ttf-freefont
 pacman -Rs ttf-freefont
 fc-cache -fv
@@ -586,8 +573,6 @@ df -h
 nano /etc/xdg/waybar/config
 pacman -Syu --ignore linux,linux-lts
 sudo netctl restart home5G
-unzip archive.zip
-for f in *; do mv "$f" "${f// /-}"; done
 man du
 du -hs
 du -h .
@@ -607,13 +592,10 @@ cmatrix
 systemd-analyze blame
 find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f #Tail of all logs in /var/log
 printenv
-env
 for file in *; do convert $file -resize 1366x768! $file; done
 convert image.jpg -resize 1366x768! image.jpg
 cal
 date
-du
-du -hs *
 grim -t jpeg -q 100 screen-$(date +'%y%m%d-%H%M%S').jpg
 grim -h
 grim screen-$(date +'%y%m%d-%H%M%S').png
@@ -622,32 +604,24 @@ grim -t jpeg screen-$(date +'%y%m%d-%H%M%S').jpg
 mount
 mount | column -t
 sudo ls /lost+found/
-imv *
 man ls
 man grep
 source ~/.bashrc
-lsf
-redshift -p
 man disown
 nano
 neofetch
-man pacman
 less packages.txt
-pacman -Syu
 cat /var/log/pacman.log
-clear
 pacman -Qt
 pacman -Qe
 pacman -Qd
 pacman -Qdtq 
-nmon
 light -G
 light -S 10
 light -S 5
 man modinfo
 man modprobe
 man systemctl
-sudo netctl switch-to home2G
 systemctl reboot
 dmesg | less
 systemctl daemon-reload
@@ -662,10 +636,7 @@ reset
 systemctl hibernate
 systemctl suspend
 elinks
-ls.
-lsd
 redshift -P -O 5000 &
-dmesg
 cat /proc/cmdline
 man amdgpu
 cat /proc/sys/vm/laptop_mode
@@ -674,13 +645,53 @@ cat /etc/sysconfig/laptop-mode
 nano ~/.config/sway/config
 swaymsg "output * dpms on"
 journalctl -f
-fff
 cat /etc/systemd/logind.conf
-htop
 history
 nano /etc/systemd/logind.conf
 sudo nano /etc/systemd/logind.conf
 systemctl restart systemd-logind.service
 sudo systemctl restart systemd-logind.service
 nano ~/.config/waybar/config 
+git commit -a -m "edit"
+git push origin master
+htop
+pacman -S xf86-video-amdgpu
+/sys/module/amdgpu/parameters/
+cat /etc/modprobe.d/amdgpu.conf
+dmesg
+sudo netctl switch-to home2G
+lspci
+man lspci
+lspci -k
+tail -n+1 /sys/class/drm/card0/device/pp_dpm_*clk
+man pacman
+cat PKGBUILD 
+nano /etc/makepkg.conf 
+makepkg -sic --noarchive
+man makepkg
+PKGEXT='.pkg.tar' makepkg -sic
+env
 git status
+./update_version.sh
+nmon
+man loginctl
+unzip archive.zip
+man rename
+rename --help
+for f in *; do mv "$f" "${f// /-}"; done
+du
+man convert
+du -hs *
+man imv
+imv *
+for file in *; do convert $file -verbose -resize 1366x768! $file; done
+lsd
+ls.
+lsf
+fff
+amixer sset Master mute
+amixer sset Master unmute
+clear
+curl wttr.in/
+pacman -Syu
+redshift -p

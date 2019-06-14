@@ -300,17 +300,20 @@ bindsym $mod+r mode "resize"
 
 ## Media controls
 
-# Sreen brightness controls
-set $bldir /sys/class/backlight/amdgpu_bl0/brightness
-set $blight echo $(( $(<$bldir) + $amt )) | sudo tee $bldir > /dev/null
-set $blamt 10
+## Screen brightness controls
+# bash version
+#set $bldir /sys/class/backlight/amdgpu_bl0/brightness
+#set $blight echo $(( $(<$bldir) + $amt )) | sudo tee $bldir > /dev/null
+#set $blamt 10
+#bindsym XF86MonBrightnessDown exec "amt=-$blamt; $blight"
+#bindsym XF86MonBrightnessUp exec "amt=$blamt; $blight"
 
-bindsym XF86MonBrightnessDown exec "amt=-$blamt; $blight"
-bindsym XF86MonBrightnessUp exec "amt=$blamt; $blight"
+# light version
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
 
-#bindsym XF86MonBrightnessDown exec light -U 5
-#bindsym XF86MonBrightnessUp exec light -A 5
 
+## Audio controls
 # ALSA Audio Controls
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
@@ -324,7 +327,8 @@ bindsym XF86AudioMute exec amixer set Master toggle
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume 4 -10%
 #bindsym XF86AudioMute exec pactl set-sink-mute 4 toggle
 
-# Media player controls
+
+## Media player controls
 #bindsym XF86AudioPlay exec playerctl play
 #bindsym XF86AudioPause exec playerctl pause
 #bindsym XF86AudioNext exec playerctl next
