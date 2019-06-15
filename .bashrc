@@ -1,10 +1,11 @@
 # ~/.bashrc
+# .bashrc is executed for interactive non-login shells
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # Print a message
-echo "Processing ~/.bashrc..."
+echo "Processing ~/.bashrc for $USER..."
 
 # PS1 Prompt
 # PS1='[\u@\h \W]\$ '
@@ -61,20 +62,3 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
-
-
-# TTY Conditionals
-# If running from tty1 (arch login) start a wm
-if [ "$(tty)" = "/dev/tty1" ]; then
-    # Run a WM
-    exec sway
-fi
-
-# If running from any tty (virtual framebuffer console)
-if [[ $(tty) =~ /dev/tty[1-9] ]]; then
-    # Set the Linux Console font: /usr/share/kbd/consolefonts/
-    setfont Lat2-Terminus16.psfu
-
-    # General Purpose Mouse (in the console)
-    sudo gpm -B 123 -r 25 -m /dev/input/mice -t ps2
-fi
