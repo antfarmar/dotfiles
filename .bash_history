@@ -249,7 +249,6 @@ pavucontrol
 ps -aumaf
 python
 redshift -P -O 5000
-redshift -x
 rm ~/.local/share/fff/trash/*
 rm scrot
 sensors
@@ -616,7 +615,6 @@ nano .bashrc
 systemctl hibernate
 systemctl suspend
 elinks
-redshift -P -O 5000 &
 cat /proc/cmdline
 man amdgpu
 cat /proc/sys/vm/laptop_mode
@@ -668,7 +666,6 @@ cat /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/mirrorlist.pacnew 
 pacman -S glances
 glances
-redshift -p
 sudo netctl switch-to home5G
 git status
 git pull
@@ -706,7 +703,11 @@ sudo systemctl suspend
 man 5 sway-bar
 man killall
 less packages.txt
-pacman -Syu
-htop
 curl wttr.in/
 fff
+pacman -Syu
+redshift -p
+redshift -P -O 5000 &
+redshift -x
+redshift -h
+htop
