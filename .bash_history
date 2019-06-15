@@ -77,7 +77,6 @@ git config --local status.showUntrackedFiles no
 git config credential.helper store
 git init
 git init --help
-git pull
 git pull --help
 git push --help
 git push -u origin master
@@ -286,7 +285,6 @@ sudo echo 10 > /sys/class/backlight/amdgpu_bl0/brightness
 sudo fallocate -l 4G /swapfile
 sudo fdisk /dev/sda
 sudo filefrag -v /swapfile
-sudo gpm -k
 sudo journalctl --vacuum-size=50M
 sudo libinput debug-events
 sudo mkdir /etc/pacman.d/hooks/
@@ -456,7 +454,6 @@ netctl stop home5G
 netctl disable home
 sudo netctl disable home
 netctl start home2G
-sudo netctl switch-to home5G
 netctl enable home5G
 sudo netctl enable home5G
 systemctl status netctl
@@ -540,7 +537,6 @@ pacman -Rs ttf-freefont
 fc-cache -fv
 echo $EDITOR
 cat fff.txt
-su
 EDITOR=nano fff
 EDITOR=vim fff
 systemctl --user import-environment
@@ -604,13 +600,11 @@ grim -t jpeg screen-$(date +'%y%m%d-%H%M%S').jpg
 mount
 mount | column -t
 sudo ls /lost+found/
-man ls
 man grep
 source ~/.bashrc
 man disown
 nano
 neofetch
-less packages.txt
 cat /var/log/pacman.log
 pacman -Qt
 pacman -Qe
@@ -646,7 +640,6 @@ nano ~/.config/sway/config
 swaymsg "output * dpms on"
 journalctl -f
 cat /etc/systemd/logind.conf
-history
 nano /etc/systemd/logind.conf
 sudo nano /etc/systemd/logind.conf
 systemctl restart systemd-logind.service
@@ -654,7 +647,6 @@ sudo systemctl restart systemd-logind.service
 nano ~/.config/waybar/config 
 git commit -a -m "edit"
 git push origin master
-htop
 pacman -S xf86-video-amdgpu
 /sys/module/amdgpu/parameters/
 cat /etc/modprobe.d/amdgpu.conf
@@ -671,7 +663,6 @@ makepkg -sic --noarchive
 man makepkg
 PKGEXT='.pkg.tar' makepkg -sic
 env
-git status
 ./update_version.sh
 nmon
 man loginctl
@@ -693,5 +684,21 @@ amixer sset Master mute
 amixer sset Master unmute
 clear
 curl wttr.in/
+cat /etc/pacman.d/mirrorlist
+cat /etc/pacman.d/mirrorlist.pacnew 
+less packages.txt
+pacman -S glances
 pacman -Syu
+glances
 redshift -p
+sudo netctl switch-to home5G
+git status
+git pull
+echo $(tty)
+man ls
+man man
+history
+gpm -k
+sudo gpm -k
+htop
+su
