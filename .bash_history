@@ -679,7 +679,6 @@ history
 gpm -k
 sudo gpm -k
 su
-curl wttr.in/
 waybar --version
 man 5 sway-input
 neofetch
@@ -696,7 +695,6 @@ modinfo --parameters amdgpu
 /sys/
 nano /etc/mkinitcpio.conf
 uname -a
-fff
 lscpu 
 lspci 
 man systool
@@ -710,3 +708,5 @@ man killall
 less packages.txt
 pacman -Syu
 htop
+curl wttr.in/
+fff
