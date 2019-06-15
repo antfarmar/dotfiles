@@ -1,8 +1,9 @@
 {
-    "layer": "top",         // Waybar at top layer (over windows)
     "position": "bottom",   // Waybar position (top|bottom|left|right)
+    "layer":    "bottom",   // Waybar at top layer (over windows)
     //"height": 25,           // Waybar height (to be removed for auto height)
-    //"width": 1280,          // Waybar width
+    //"width": 768,           // Waybar width
+    //"output": "eDP-1",
 
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
@@ -30,7 +31,7 @@
      },
     "sway/window": {
         "format": " {}",
-        "max-length": 50,
+        "max-length": 500,
         "tooltip": false
     },
     // Resize Mode Alert
@@ -52,6 +53,7 @@
         "tooltip-format": "{:%Y-%m-%d ⌚ %H:%M}",
         "format": "{:%a %b %d 🕒 %R}",
         "format-alt": "{:%H:%M}"
+        //"rotate": 270
     },
     "cpu": {
         "format": "{usage:2}% ",

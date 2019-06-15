@@ -5,7 +5,7 @@
 /* Global */
 * {
     border: none;
-    border-radius: 25px;
+    border-radius: 10px;
     font-family:  Inconsolata, xos4 Terminus, Arimo, Roboto, Noto Sans, FreeSans, Helvetica, sans-serif;
     font-size: 12px;
     min-height: 0;
@@ -13,19 +13,23 @@
 
 
 /* Global Consistency */
- #workspaces, #window, #mode, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #idle_inhibitor {
+ #workspaces button,
+ #window, #mode, #clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #idle_inhibitor {
 	/* margin-bottom: 0; */
     /* margin-top: 8; */
     /* margin-left: 10; */
 	/* padding-left: 10; */
 	/* padding-right: 10; */
-    margin: 0px 5px;
-    padding: 1px 5px;
-	border-radius: 25px;
+    margin: 0px 2px;
+    padding: 1px 10px;
+    border-radius: 10px;
+    border: 1px solid #888888;
 	transition: none;
-	color: #dddddd;
+	color: #ffffff;
 	background: #222233;
 }
+
+/* #workspaces {margin: 0px 0px; padding: 0px 10px;} */
 
 window#waybar {
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
@@ -66,12 +70,14 @@ window#waybar.code-oss #window {
     border: none;
 }
 
+
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button {
-    /* padding: 0 2px; */
+    margin: 0px 0px;
+    padding: 1px 10px;
     background-color: rgba(34, 34, 51, 0.8);
     color: #ffffff;
-    border-bottom: 3px solid transparent;
+    /* border-bottom: 3px solid transparent; */
 }
 #workspaces button.focused {
     background-color: #64727D;

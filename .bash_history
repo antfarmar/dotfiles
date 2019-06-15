@@ -1,6 +1,5 @@
 ./wp.sh
 /etc/systemd/journald.conf
-/sys/class/backlight/amdgpu_bl0/
 /usr/lib/dri/
 ~
 alsactl
@@ -126,14 +125,12 @@ ls dotfiles/
 lsblk -f
 lsinitcpio -a /boot/initramfs-linux-lts.img
 lsinitcpio -a /boot/initramfs-linux.img
-lsmod
 lsmod | grep '^snd' | column -t
 lsmod | less
 lspci -knn|grep -iA2 audio
 lzop
 makepkg --clean
 man 5 sway
-man 5 sway-input
 man cfdisk
 man date
 man fancontrol
@@ -157,8 +154,6 @@ mkinitcpio -g /boot/initramfs-linux.img
 mkinitcpio -L
 mkinitcpio -p linux
 mkswap /swapfile
-modinfo -i amdgpu
-modinfo -p amdgpu
 modprobe -c | less
 modprobe -r snd_hda_intel
 modprobe amdgpu
@@ -187,7 +182,6 @@ mpv https://www.youtube.com/watch?v=UcFQSqaAPXM
 nano .bash_history
 nano .inputrc
 nano /etc/makepkg.conf
-nano /etc/mkinitcpio.conf
 nano /etc/mkinitcpio.d/linux.preset
 nano /etc/pacman.conf
 nano /etc/sensors.d/fan-speed-control.conf
@@ -321,7 +315,6 @@ sudo sensors-detect
 sudo shutdown now
 sudo swapon /swapfile
 sudo systemctl hibernate
-sudo systemctl suspend
 sudo umount -R /mnt/
 sudo umount -R /mnt/win/
 sudo vdpauinfo
@@ -332,7 +325,6 @@ swaymsg "output * bg ~/pics/arch-arc-dark.png stretch"
 systemctl
 systemctl | less
 systemctl enable netctl
-systool -m amdgpu -av
 systool -m snd_hda_intel
 systool -m snd_hda_intel -av
 timedatectl set-ntp true
@@ -356,7 +348,6 @@ youtube-viewer --help
 youtube-viewer --resolution=480p
 youtube-viewer --tricks
 ~/scripts/wp.sh
-man 5 sway-bar
 man sway-ipc
 man swaymsg
 pacman -Sc
@@ -556,7 +547,6 @@ cat keys.txt
 nano ~/.config/waybar/config
 curl https://wttr.in?1
 waybar --help
-waybar --version
 man netctl
 youtube-dl --help
 youtube-viewer
@@ -604,7 +594,6 @@ man grep
 source ~/.bashrc
 man disown
 nano
-neofetch
 cat /var/log/pacman.log
 pacman -Qt
 pacman -Qe
@@ -613,7 +602,6 @@ pacman -Qdtq
 light -G
 light -S 10
 light -S 5
-man modinfo
 man modprobe
 man systemctl
 systemctl reboot
@@ -622,11 +610,9 @@ systemctl daemon-reload
 sudo systemctl daemon-reload
 ping archlinux.org
 sudo htop
-uname -a
 nano /boot/loader/entries/arch.conf
 sudo nano /boot/loader/entries/arch.conf
 nano .bashrc 
-reset
 systemctl hibernate
 systemctl suspend
 elinks
@@ -648,8 +634,6 @@ nano ~/.config/waybar/config
 git commit -a -m "edit"
 git push origin master
 pacman -S xf86-video-amdgpu
-/sys/module/amdgpu/parameters/
-cat /etc/modprobe.d/amdgpu.conf
 dmesg
 sudo netctl switch-to home2G
 lspci
@@ -662,7 +646,6 @@ nano /etc/makepkg.conf
 makepkg -sic --noarchive
 man makepkg
 PKGEXT='.pkg.tar' makepkg -sic
-env
 ./update_version.sh
 nmon
 man loginctl
@@ -679,16 +662,11 @@ for file in *; do convert $file -verbose -resize 1366x768! $file; done
 lsd
 ls.
 lsf
-fff
 amixer sset Master mute
 amixer sset Master unmute
-clear
-curl wttr.in/
 cat /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/mirrorlist.pacnew 
-less packages.txt
 pacman -S glances
-pacman -Syu
 glances
 redshift -p
 sudo netctl switch-to home5G
@@ -700,5 +678,35 @@ man man
 history
 gpm -k
 sudo gpm -k
-htop
 su
+curl wttr.in/
+waybar --version
+man 5 sway-input
+neofetch
+env
+reset
+clear
+cat /etc/modprobe.d/amdgpu.conf
+/sys/class/backlight/amdgpu_bl0/
+/sys/module/amdgpu/parameters/
+modinfo -p amdgpu
+man modinfo
+modinfo amdgpu
+modinfo --parameters amdgpu
+/sys/
+nano /etc/mkinitcpio.conf
+uname -a
+fff
+lscpu 
+lspci 
+man systool
+systool -h
+lsmod
+systool -m amdgpu -av
+nano notes.txt 
+sudo systemctl suspend
+man 5 sway-bar
+man killall
+less packages.txt
+pacman -Syu
+htop
