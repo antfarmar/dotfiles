@@ -11,7 +11,10 @@
 
     // Modules configuration
      "sway/workspaces": {
-         "disable-scroll": true,
+         "disable-scroll": false,
+         "disable-scroll-wraparound": true,
+         "enable-bar-scroll": true, // from anywhere on the bar
+         "smooth-scrolling-threshold": 999999999, // doesn't work
          "all-outputs": true,
          "format": "{icon} {name}",
          "format-icons": {
