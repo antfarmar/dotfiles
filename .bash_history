@@ -652,7 +652,6 @@ cat /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/mirrorlist.pacnew 
 pacman -S glances
 sudo netctl switch-to home5G
-git status
 git pull
 echo $(tty)
 man man
@@ -683,7 +682,6 @@ sudo systemctl suspend
 man 5 sway-bar
 man killall
 curl wttr.in/
-fff
 redshift -p
 redshift -x
 redshift -h
@@ -703,7 +701,6 @@ tr --help
 alias
 lsd
 lsf
-ls.
 glances
 \pacman -Ss > packages.txt 
 less packages.txt
@@ -720,3 +717,6 @@ pacman -Syu
 sudo netctl restart home5G
 echo $?
 echo $? #exit code of last command
+ls.
+fff
+git status
