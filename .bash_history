@@ -292,7 +292,6 @@ sudo nano /etc/makepkg.conf
 sudo nano /etc/mkinitcpio.conf
 sudo nano /etc/modprobe.d/alsa-base.conf
 sudo nano /etc/pacman.d/hooks/100-systemd-boot.hook
-sudo nano /etc/pacman.d/mirrorlist
 sudo nano /etc/sensors.d/fan-speed-control.conf
 sudo nano /etc/sysctl.d/99-sysctl.conf
 sudo nano /etc/systemd/journald.conf
@@ -532,14 +531,12 @@ curl https://wttr.in?format=4
 less
 light -H
 man light
-nano ~/.config/nano/nanorc
 cat keys.txt
 nano ~/.config/waybar/config
 curl https://wttr.in?1
 waybar --help
 youtube-dl --help
 youtube-viewer
-killall dmenu
 netctl restart home5G
 pacman -Syu --ignore linux
 free -h
@@ -641,7 +638,6 @@ cat /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/mirrorlist.pacnew 
 pacman -S glances
 sudo netctl switch-to home5G
-git pull
 echo $(tty)
 man man
 gpm -k
@@ -691,14 +687,10 @@ man fc
 sudo netctl restart home5G
 echo $?
 echo $? #exit code of last command
-git commit -a -m "edit"
 lsf
 lsd
-ls.
-curl wttr.in/
 neofetch
 nano
-clear
 slurp | grim -g - sshot.png
 du
 su
@@ -722,7 +714,6 @@ convert -verbose -quality 100 *.png
 for file in *; do convert $file -verbose ${file%%.*}.jpg; done
 file *
 fff
-pacman -Syu
 imv .
 du -hs *
 du -hs
@@ -731,7 +722,18 @@ umount -vR /mnt/win/
 sudo umount -vR /mnt/win/
 man umount
 mpsyt
-reset
 htop
-git status
+git commit -a -m "edit"
 git push origin master
+git pull
+curl wttr.in/
+sudo nano /etc/pacman.d/mirrorlist
+nano /etc/pacman.d/mirrorlist
+nano ~/.config/nano/nanorc
+reset
+l
+ls.
+git status
+clear
+pacman -Syu
+killall dmenu

@@ -47,18 +47,3 @@ alias ls.='ls -dF .*'   #dots only
 alias grep="grep --color=auto"
 alias pacman="sudo pacman"
 # alias dotgit='/usr/bin/git --git-dir=$HOME/.dotfiles-git/.git --work-tree=$HOME'
-
-
-# Environment Variables
-# this one is global/system-wide so put in /etc/environment
-# export VDPAU_DRIVER=radeonsi
-# preferred terminal editor
-export EDITOR=nano
-# Add color in manpages for less
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'

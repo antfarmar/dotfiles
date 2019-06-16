@@ -11,6 +11,21 @@ echo "Hello, $USER"
 setfont Lat2-Terminus16.psfu
 
 
+# Environment Variables
+# this one is global/system-wide so put in /etc/environment
+# export VDPAU_DRIVER=radeonsi
+# preferred terminal editor
+export EDITOR=nano
+# Add color in manpages for less
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+
 # TTY Conditionals
 # If running from tty1 (arch login) start a wm
 if [ "$(tty)" = "/dev/tty1" ]; then
