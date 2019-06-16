@@ -31,6 +31,13 @@
 
 /* #workspaces {margin: 0px 0px; padding: 0px 10px;} */
 
+/* Center? */
+#window {
+    margin-left: 0;
+    margin-right: 100;
+    border: none;
+}
+
 window#waybar {
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     /* background-color: rgba(43, 48, 59, 0.0); */

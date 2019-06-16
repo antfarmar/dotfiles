@@ -139,7 +139,6 @@ man grim
 man history
 man libinput
 man redshift
-man rm
 man sudo
 man sway
 man swaymsg
@@ -363,7 +362,6 @@ tar -czvf ~/walls.tgz .
 tar -czvf ~/walls.tgz *
 tar -ztvf ~/walls.tgz
 for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
-imv .
 du -hs ~/pics
 git push
 pacman -S upower
@@ -463,7 +461,6 @@ man hier #linux filesystem hierarchy
 cat /etc/issue
 systemd-analyze time
 sudo dd if=/dev/mem | cat | strings #look at strings in ram RAM
-man fc
 read day month year <<< $(date +'%d %m %y')
 disown --help
 du -s * | sort -n | tail
@@ -546,7 +543,6 @@ cat keys.txt
 nano ~/.config/waybar/config
 curl https://wttr.in?1
 waybar --help
-man netctl
 youtube-dl --help
 youtube-viewer
 killall dmenu
@@ -557,9 +553,7 @@ df
 df -h
 nano /etc/xdg/waybar/config
 pacman -Syu --ignore linux,linux-lts
-sudo netctl restart home5G
 man du
-du -hs
 du -h .
 for f in *; do mv "$f" "${f//.png/.jpg}"; done
 for file in *; do convert $file -quality 90 $file; done
@@ -578,7 +572,6 @@ systemd-analyze blame
 find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f #Tail of all logs in /var/log
 printenv
 for file in *; do convert $file -resize 1366x768! $file; done
-convert image.jpg -resize 1366x768! image.jpg
 cal
 date
 grim -t jpeg -q 100 screen-$(date +'%y%m%d-%H%M%S').jpg
@@ -651,37 +644,24 @@ unzip archive.zip
 man rename
 rename --help
 for f in *; do mv "$f" "${f// /-}"; done
-du
 man convert
-du -hs *
 man imv
-imv *
-for file in *; do convert $file -verbose -resize 1366x768! $file; done
-lsd
-ls.
-lsf
 amixer sset Master mute
 amixer sset Master unmute
 cat /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/mirrorlist.pacnew 
 pacman -S glances
-glances
 sudo netctl switch-to home5G
 git status
 git pull
 echo $(tty)
-man ls
 man man
-history
 gpm -k
 sudo gpm -k
 su
 waybar --version
 man 5 sway-input
-neofetch
 env
-reset
-clear
 cat /etc/modprobe.d/amdgpu.conf
 /sys/class/backlight/amdgpu_bl0/
 /sys/module/amdgpu/parameters/
@@ -702,12 +682,41 @@ nano notes.txt
 sudo systemctl suspend
 man 5 sway-bar
 man killall
-less packages.txt
 curl wttr.in/
 fff
-pacman -Syu
 redshift -p
-redshift -P -O 5000 &
 redshift -x
 redshift -h
+du
+du -hs *
+for file in *; do convert $file -verbose -resize 1366x768! $file; done
+clear
+imv *
+imv .
+imv $(ls -1 | sort)
+man ls
+man rm
+du -hs
+history
+redshift -P -O 5000 &
+tr --help
+alias
+lsd
+lsf
+ls.
+glances
+\pacman -Ss > packages.txt 
+less packages.txt
+neofetch
+man netctl
 htop
+man magick
+reset
+imv $(ls -S)
+imv * &
+convert image.jpg -resize 1366x768! image.jpg
+man fc
+pacman -Syu
+sudo netctl restart home5G
+echo $?
+echo $? #exit code of last command
