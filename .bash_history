@@ -622,7 +622,6 @@ sudo nano /etc/systemd/logind.conf
 systemctl restart systemd-logind.service
 sudo systemctl restart systemd-logind.service
 nano ~/.config/waybar/config 
-git commit -a -m "edit"
 git push origin master
 pacman -S xf86-video-amdgpu
 dmesg
@@ -719,4 +718,5 @@ echo $?
 echo $? #exit code of last command
 ls.
 fff
+git commit -a -m "edit"
 git status
