@@ -122,7 +122,6 @@ ls /sys/class/backlight/amdgpu_bl0/
 ls /usr/bin/
 ls /usr/lib/vdpau/
 ls dotfiles/
-lsblk -f
 lsinitcpio -a /boot/initramfs-linux-lts.img
 lsinitcpio -a /boot/initramfs-linux.img
 lsmod | grep '^snd' | column -t
@@ -157,8 +156,6 @@ modprobe -c | less
 modprobe -r snd_hda_intel
 modprobe amdgpu
 modprobe snd_hda_intel index=1
-mount /dev/sda3 /mnt/win/
-mpsyt
 mpv
 mpv --gpu-context=help
 mpv --gpu-context=wayland --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
@@ -289,7 +286,6 @@ sudo modprobe -r amdgpu
 sudo modprobe -r snd_hda_intel
 sudo modprobe amdgpu
 sudo modprobe snd_hda_intel index=1
-sudo mount /dev/sda3 /mnt/win/
 sudo nano /boot/loader/entries/arch-lts.conf
 sudo nano /etc/fstab
 sudo nano /etc/makepkg.conf
@@ -353,7 +349,6 @@ paccache -h
 imv scrot.png
 swaymsg -t get_inputs
 swaymsg -t get_outputs
-imv
 tar -xzvf ~/walls.tgz ~/pics/
 curl cht.sh/tar
 tar -xzvf ~/walls.tgz
@@ -529,7 +524,6 @@ EDITOR=vim fff
 systemctl --user import-environment
 systemctl --user show-environment
 systemctl --user set-environment
-sudo fff
 curl https://wttr.in
 curl https://wttr.in?format=1
 curl https://wttr.in?format=2
@@ -556,8 +550,6 @@ pacman -Syu --ignore linux,linux-lts
 man du
 du -h .
 for f in *; do mv "$f" "${f//.png/.jpg}"; done
-for file in *; do convert $file -quality 90 $file; done
-file *
 du -h
 showkey -a
 nano .inputrc
@@ -585,7 +577,6 @@ sudo ls /lost+found/
 man grep
 source ~/.bashrc
 man disown
-nano
 cat /var/log/pacman.log
 pacman -Qt
 pacman -Qe
@@ -622,7 +613,6 @@ sudo nano /etc/systemd/logind.conf
 systemctl restart systemd-logind.service
 sudo systemctl restart systemd-logind.service
 nano ~/.config/waybar/config 
-git push origin master
 pacman -S xf86-video-amdgpu
 dmesg
 sudo netctl switch-to home2G
@@ -656,7 +646,6 @@ echo $(tty)
 man man
 gpm -k
 sudo gpm -k
-su
 waybar --version
 man 5 sway-input
 env
@@ -680,43 +669,69 @@ nano notes.txt
 sudo systemctl suspend
 man 5 sway-bar
 man killall
-curl wttr.in/
 redshift -p
 redshift -x
 redshift -h
-du
-du -hs *
-for file in *; do convert $file -verbose -resize 1366x768! $file; done
-clear
 imv *
-imv .
 imv $(ls -1 | sort)
 man ls
 man rm
-du -hs
-history
 redshift -P -O 5000 &
 tr --help
 alias
-lsd
-lsf
 glances
 \pacman -Ss > packages.txt 
 less packages.txt
-neofetch
 man netctl
-htop
 man magick
-reset
 imv $(ls -S)
 imv * &
 convert image.jpg -resize 1366x768! image.jpg
 man fc
-pacman -Syu
 sudo netctl restart home5G
 echo $?
 echo $? #exit code of last command
-ls.
-fff
 git commit -a -m "edit"
+lsf
+lsd
+ls.
+curl wttr.in/
+neofetch
+nano
+clear
+slurp | grim -g - sshot.png
+du
+su
+lsblk -f
+mount /dev/sda3 /mnt/win/
+sudo mount /dev/sda3 /mnt/win/
+sudo fff
+imv
+man chown
+sudo chown maf:maf *
+man chmod
+curl cht.sh/chmod
+chmod 644 *
+for file in *; do convert $file -verbose -resize 1366x768! $file; done
+imv . > list.txt
+for file in *; do convert $file -quality 90 $file; done
+for file in *; do convert $file -verbose -quality 90 $file; done
+killall convert
+convert -verbose -quality 100 *.png jpg
+convert -verbose -quality 100 *.png
+for file in *; do convert $file -verbose ${file%%.*}.jpg; done
+file *
+fff
+pacman -Syu
+imv .
+du -hs *
+du -hs
+history
+umount -vR /mnt/win/
+sudo umount -vR /mnt/win/
+man umount
+mpsyt
+reset
+htop
 git status
+git push origin master
