@@ -49,8 +49,19 @@ window:
   #     - none: Neither borders nor title bar
   decorations: full
 
-  # When true, alacritty starts maximized.
-  start_maximized: false
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  startup_mode: Windowed
+
+  # Window title
+  title: Alacritty
+
+  # Window class (Linux only):
+  class: Alacritty
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -142,15 +153,9 @@ font:
     x: 0
     y: 0
 
-# Display the time it takes to redraw each frame.
-render_timer: false
-
-# Keep the log file after quitting Alacritty.
-persistent_logging: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
-
 
 # Colors
 # terminal.sexy: hybrid
@@ -416,19 +421,36 @@ live_config_reload: true
 #  args:
 #    - --login
 
-# Windows 10 ConPTY backend (Windows only)
+# Startup directory
 #
-# This will enable better color support and may resolve other issues,
-# however this API and its implementation is still young and so is
-# disabled by default, as stability may not be as good as the winpty
-# backend.
-#
-# Alacritty will fall back to the WinPTY automatically if the ConPTY
-# backend cannot be initialized.
-#enable_experimental_conpty_backend: false
+# Directory the shell is started in. If this is unset, or `None`, the working
+# directory of the parent process will be used.
+working_directory: None
 
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: true
+debug:
+  # Display the time it takes to redraw each frame.
+  render_timer: false
+
+  # Keep the log file after quitting Alacritty.
+  persistent_logging: false
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - None
+  #   - Error
+  #   - Warn
+  #   - Info
+  #   - Debug
+  #   - Trace
+  log_level: Warn
+
+  # Print all received window events.
+  print_events: false
+
+  # Record all characters and escape sequences as test data.
+  ref_test: false
+
 
 # Key bindings
 #
