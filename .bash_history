@@ -52,7 +52,6 @@ export VDPAU_DRIVER=radeonsi
 fallocate -l 4G /swapfile
 fancontrol
 fc-match -s monospace
-fdisk --help
 fdisk /dev/sda
 filefrag -v /swapfile
 find ~ -name '*.mkv'
@@ -125,7 +124,6 @@ ls dotfiles/
 lsinitcpio -a /boot/initramfs-linux-lts.img
 lsinitcpio -a /boot/initramfs-linux.img
 lsmod | grep '^snd' | column -t
-lsmod | less
 lspci -knn|grep -iA2 audio
 lzop
 makepkg --clean
@@ -138,7 +136,6 @@ man grim
 man history
 man libinput
 man redshift
-man sudo
 man sway
 man swaymsg
 man swaynag
@@ -381,7 +378,6 @@ pacman -S waybar
 pacman -S bdf-unifont
 pacman -S noto-fonts
 pacman -S noto-fonts-emoji
-sway
 pacman -S alacritty-terminfo
 curl wttr.in/:help
 echo $(seq 1 10)
@@ -584,19 +580,13 @@ light -S 10
 light -S 5
 man modprobe
 man systemctl
-systemctl reboot
-dmesg | less
 systemctl daemon-reload
 sudo systemctl daemon-reload
 ping archlinux.org
 sudo htop
-nano /boot/loader/entries/arch.conf
-sudo nano /boot/loader/entries/arch.conf
 nano .bashrc 
 systemctl hibernate
-systemctl suspend
 elinks
-cat /proc/cmdline
 man amdgpu
 cat /proc/sys/vm/laptop_mode
 cat /etc/sysctl.d/laptop.conf
@@ -611,7 +601,6 @@ systemctl restart systemd-logind.service
 sudo systemctl restart systemd-logind.service
 nano ~/.config/waybar/config 
 pacman -S xf86-video-amdgpu
-dmesg
 sudo netctl switch-to home2G
 lspci
 man lspci
@@ -697,7 +686,6 @@ su
 lsblk -f
 mount /dev/sda3 /mnt/win/
 sudo mount /dev/sda3 /mnt/win/
-sudo fff
 imv
 man chown
 sudo chown maf:maf *
@@ -713,7 +701,6 @@ convert -verbose -quality 100 *.png jpg
 convert -verbose -quality 100 *.png
 for file in *; do convert $file -verbose ${file%%.*}.jpg; done
 file *
-fff
 imv .
 du -hs *
 du -hs
@@ -722,7 +709,6 @@ umount -vR /mnt/win/
 sudo umount -vR /mnt/win/
 man umount
 mpsyt
-htop
 git commit -a -m "edit"
 git push origin master
 git pull
@@ -732,8 +718,54 @@ nano /etc/pacman.d/mirrorlist
 nano ~/.config/nano/nanorc
 reset
 l
-ls.
-git status
-clear
-pacman -Syu
 killall dmenu
+./update_version.sh 
+git status
+sway
+lsmod | less
+sudo fff
+sudo hwclock
+locale -a
+locale
+localectl 
+hostname
+getent hosts
+clear
+fff
+sl
+fdisk --help
+man sudo
+sudo -i
+umount -vR /mnt/usb/
+umount -v /mnt/usb/
+umount -v /mnt/win/
+mount /dev/sdb1 /mnt/usb/
+umount /dev/sdb1
+man dd
+dd bs=4M if=archlinux-2019.06.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
+sudo dd bs=4M if=archlinux-2019.06.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
+sudo mount /dev/sdb1 /mnt/usb/
+ls.
+lsblk
+sudo umount /dev/sdb1
+sudo mount /dev/sdb /mnt/usb/
+lsblk 
+fdisk --list
+sudo fdisk --list
+sudo umount -vR /mnt/usb/
+sudo umount /dev/sdb
+man qemu
+qemu-system-x86_64 --help
+qemu-system-x86_64 /dev/sdb
+systemctl reboot
+dmesg
+cat /proc/cmdline
+sudo nano /boot/loader/entries/arch.conf
+dmesg | less
+systemctl suspend
+pacman -S qemu
+nano /boot/loader/entries/arch.conf
+killall alacritty
+htop
+pacman -Syu
+alacritty --version
