@@ -525,6 +525,7 @@ debug:
 #   - Quit
 #   - ClearLogNotice
 #   - SpawnNewInstance
+#   - ToggleFullscreen
 #   - None
 #
 # Values for `command`:
