@@ -768,4 +768,5 @@ nano /boot/loader/entries/arch.conf
 killall alacritty
 htop
 pacman -Syu
+alacritty --help
 alacritty --version
