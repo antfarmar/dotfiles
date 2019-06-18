@@ -135,7 +135,6 @@ man fdisk
 man grim
 man history
 man libinput
-man redshift
 man sway
 man swaymsg
 man swaynag
@@ -415,7 +414,6 @@ telnet towel.blinkenlights.nl
 imv scrot.png
 figlet
 figlet "message"
-systemctl status
 netctl --help
 netctl status home
 netctl edit home
@@ -502,7 +500,6 @@ pacman -Rs bdf-unifont
 fc-match --verbose Serif
 fc-list | less
 pacman -Rs ttf-roboto
-pacman -Q | less
 pacman -S ttf-croscore
 man fonts-conf
 nano fff.txt
@@ -553,7 +550,6 @@ pacman -Ss > packages.txt
 pacman -S asciiquarium
 asciiquarium
 cmatrix
-systemd-analyze blame
 find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f #Tail of all logs in /var/log
 printenv
 for file in *; do convert $file -resize 1366x768! $file; done
@@ -583,7 +579,6 @@ man systemctl
 systemctl daemon-reload
 sudo systemctl daemon-reload
 ping archlinux.org
-sudo htop
 nano .bashrc 
 systemctl hibernate
 elinks
@@ -633,7 +628,6 @@ gpm -k
 sudo gpm -k
 waybar --version
 man 5 sway-input
-env
 cat /etc/modprobe.d/amdgpu.conf
 /sys/class/backlight/amdgpu_bl0/
 /sys/module/amdgpu/parameters/
@@ -654,7 +648,6 @@ nano notes.txt
 sudo systemctl suspend
 man 5 sway-bar
 man killall
-redshift -p
 redshift -x
 redshift -h
 imv *
@@ -673,7 +666,6 @@ imv $(ls -S)
 imv * &
 convert image.jpg -resize 1366x768! image.jpg
 man fc
-sudo netctl restart home5G
 echo $?
 echo $? #exit code of last command
 lsf
@@ -692,7 +684,6 @@ sudo chown maf:maf *
 man chmod
 curl cht.sh/chmod
 chmod 644 *
-for file in *; do convert $file -verbose -resize 1366x768! $file; done
 imv . > list.txt
 for file in *; do convert $file -quality 90 $file; done
 for file in *; do convert $file -verbose -quality 90 $file; done
@@ -701,7 +692,6 @@ convert -verbose -quality 100 *.png jpg
 convert -verbose -quality 100 *.png
 for file in *; do convert $file -verbose ${file%%.*}.jpg; done
 file *
-imv .
 du -hs *
 du -hs
 history
@@ -712,14 +702,11 @@ mpsyt
 git commit -a -m "edit"
 git push origin master
 git pull
-curl wttr.in/
 sudo nano /etc/pacman.d/mirrorlist
 nano /etc/pacman.d/mirrorlist
 nano ~/.config/nano/nanorc
-reset
 l
 killall dmenu
-./update_version.sh 
 git status
 sway
 lsmod | less
@@ -730,8 +717,6 @@ locale
 localectl 
 hostname
 getent hosts
-clear
-fff
 sl
 fdisk --help
 man sudo
@@ -766,7 +751,32 @@ systemctl suspend
 pacman -S qemu
 nano /boot/loader/entries/arch.conf
 killall alacritty
-htop
-pacman -Syu
 alacritty --help
 alacritty --version
+env
+./update_version.sh 
+reset
+uptime
+neofetch --help
+sudo netctl restart home5G
+curl wttr.in/
+sudo htop
+fff
+systemctl status
+systemd-analyze blame
+pacman -S man-pages
+man mandb
+mandb --create
+clear
+systemctl status man-db
+systemctl status man-db.timer
+systemd-analyze critical-chain
+pacman -Q | less
+telnet redditbox.us
+for file in *; do convert $file -verbose -resize 1366x768! $file; done
+imv .
+man redshift
+redshift -p
+pstree
+htop
+pacman -Syu
