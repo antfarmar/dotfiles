@@ -18,12 +18,13 @@ aur/
 # ----------
 
 # home dotfiles
+!.gitignore
+!.gitconfig
 !.bash_history
 !.bash_profile
 !.bashrc
 !.inputrc
 !.vimrc
-!.gitignore
 
 # home folders
 !scripts/**
