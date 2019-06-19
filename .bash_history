@@ -46,7 +46,6 @@ echo $ALACRITTY_LOG
 echo $PATH
 echo $PS1
 echo 10 > /sys/class/backlight/amdgpu_bl0/brightness
-echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 exec bash
 export VDPAU_DRIVER=radeonsi
 fallocate -l 4G /swapfile
@@ -175,7 +174,6 @@ nano .bash_history
 nano .inputrc
 nano /etc/makepkg.conf
 nano /etc/mkinitcpio.d/linux.preset
-nano /etc/pacman.conf
 nano /etc/sensors.d/fan-speed-control.conf
 nano /etc/sysctl.d/99-sysctl.conf
 nano /etc/systemd/journald.conf
@@ -232,7 +230,6 @@ pacman -S youtube-viewer
 pacman -Ss alsa
 pacman -Ss sway
 pacman -Ss Xwayland
-pacman -Syy
 pacmd list-sinks
 partx
 partx --help
@@ -256,7 +253,6 @@ speaker-test -D sysdefault:CARD=Generic -c 2
 ssh -T git@github.com
 ssh-add ~/.ssh/id_rsa
 sudo --help
-sudo -s
 sudo /etc/systemd/journald.conf
 sudo amixer sset Master unmute
 sudo bash -c "echo 15 > /sys/class/backlight/amdgpu_bl0/brightness"
@@ -358,7 +354,6 @@ pacman -S upower
 upower --help
 upower --dump
 upower --enumerate
-echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 echo "$((1+2))"
 man xargs
 curl cht.sh/xargs
@@ -606,7 +601,6 @@ cat PKGBUILD
 nano /etc/makepkg.conf 
 makepkg -sic --noarchive
 man makepkg
-PKGEXT='.pkg.tar' makepkg -sic
 ./update_version.sh
 nmon
 man loginctl
@@ -637,8 +631,6 @@ modinfo amdgpu
 modinfo --parameters amdgpu
 /sys/
 nano /etc/mkinitcpio.conf
-uname -a
-lscpu 
 lspci 
 man systool
 systool -h
@@ -670,12 +662,10 @@ echo $?
 echo $? #exit code of last command
 lsf
 lsd
-neofetch
 nano
 slurp | grim -g - sshot.png
 du
 su
-lsblk -f
 mount /dev/sda3 /mnt/win/
 sudo mount /dev/sda3 /mnt/win/
 imv
@@ -710,7 +700,6 @@ killall dmenu
 git status
 sway
 lsmod | less
-sudo fff
 sudo hwclock
 locale -a
 locale
@@ -719,8 +708,6 @@ hostname
 getent hosts
 sl
 fdisk --help
-man sudo
-sudo -i
 umount -vR /mnt/usb/
 umount -v /mnt/usb/
 umount -v /mnt/win/
@@ -731,43 +718,33 @@ dd bs=4M if=archlinux-2019.06.01-x86_64.iso of=/dev/sdb status=progress oflag=sy
 sudo dd bs=4M if=archlinux-2019.06.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
 sudo mount /dev/sdb1 /mnt/usb/
 ls.
-lsblk
 sudo umount /dev/sdb1
 sudo mount /dev/sdb /mnt/usb/
-lsblk 
-fdisk --list
-sudo fdisk --list
 sudo umount -vR /mnt/usb/
 sudo umount /dev/sdb
 man qemu
 qemu-system-x86_64 --help
 qemu-system-x86_64 /dev/sdb
-systemctl reboot
 dmesg
-cat /proc/cmdline
 sudo nano /boot/loader/entries/arch.conf
 dmesg | less
-systemctl suspend
 pacman -S qemu
 nano /boot/loader/entries/arch.conf
 killall alacritty
 alacritty --help
 alacritty --version
 env
-./update_version.sh 
 reset
 uptime
 neofetch --help
 sudo netctl restart home5G
 curl wttr.in/
 sudo htop
-fff
 systemctl status
 systemd-analyze blame
 pacman -S man-pages
 man mandb
 mandb --create
-clear
 systemctl status man-db
 systemctl status man-db.timer
 systemd-analyze critical-chain
@@ -776,7 +753,45 @@ telnet redditbox.us
 for file in *; do convert $file -verbose -resize 1366x768! $file; done
 imv .
 man redshift
-redshift -p
 pstree
+lscpu 
+systemctl suspend
+systemctl reboot
+cat /proc/cmdline
+uname -a
+./update_version.sh 
+PKGEXT='.pkg.tar' makepkg -sic
+pacman -Syy
+nano /etc/pacman.conf
+redshift -p
+lsblk
+fdisk --list
+sudo fdisk --list
+lsblk -f
+sudo pacman -S hdparm
+hdparm -I /dev/sda
+sudo fff
 htop
+man sudo
+sudo -i
+sudo -s
+echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
+neofetch
+echo LID | sudo tee /proc/acpi/wakeup
+systemctl restart systemd-udevd.service
+udevadm trigger
+sudo udevadm trigger
+journalctl --grep="Watching system buttons"
+hdparm -B /dev/sda
+man hdparm
+hdparm -h
+sudo hdparm -M /dev/sda
+sudo hdparm -B /dev/sda
+sudo hdparm /dev/sda
+sudo hdparm -i /dev/sda
+sudo hdparm -I /dev/sda
+pacman -S hdparm
 pacman -Syu
+fff
+sudo hdparm -C /dev/sda
+clear
