@@ -99,7 +99,6 @@ infocmp
 journalctl --vacuum-size=50M
 kak
 killall chrome
-killall redshift
 less ~/packages.txt
 less PKGBUILD
 libinput --help
@@ -153,23 +152,9 @@ modprobe amdgpu
 modprobe snd_hda_intel index=1
 mpv
 mpv --gpu-context=help
-mpv --gpu-context=wayland --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
 mpv --gpu-context=wayland https://www.youtube.com/watch?v=pvuN_WvF1to
-mpv --gpu-context=wayland https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --gpu-context=waylandvk --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --gpu-context=waylandvk https://www.youtube.com/watch?v=hHW1oY26kxQ
-mpv --gpu-context=waylandvk https://www.youtube.com/watch?v=pvuN_WvF1to
-mpv --gpu-context=waylandvk https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --list-options
 mpv --list-options | less
 mpv --vd=help
-mpv --vd=help | less
-mpv --vo=gpu --hwdec=vaapi https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --vo=gpu --hwdec=vdpau https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --vo=gpu https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
-mpv *
-mpv https://www.youtube.com/watch?v=UcFQSqaAPXM
 nano .bash_history
 nano .inputrc
 nano /etc/makepkg.conf
@@ -523,8 +508,6 @@ cat keys.txt
 nano ~/.config/waybar/config
 curl https://wttr.in?1
 waybar --help
-youtube-dl --help
-youtube-viewer
 netctl restart home5G
 pacman -Syu --ignore linux
 free -h
@@ -646,7 +629,6 @@ imv *
 imv $(ls -1 | sort)
 man ls
 man rm
-redshift -P -O 5000 &
 tr --help
 alias
 glances
@@ -684,11 +666,9 @@ for file in *; do convert $file -verbose ${file%%.*}.jpg; done
 file *
 du -hs *
 du -hs
-history
 umount -vR /mnt/win/
 sudo umount -vR /mnt/win/
 man umount
-mpsyt
 git commit -a -m "edit"
 git push origin master
 git pull
@@ -734,11 +714,9 @@ killall alacritty
 alacritty --help
 alacritty --version
 env
-reset
 uptime
 neofetch --help
 sudo netctl restart home5G
-curl wttr.in/
 sudo htop
 systemctl status
 systemd-analyze blame
@@ -751,11 +729,9 @@ systemd-analyze critical-chain
 pacman -Q | less
 telnet redditbox.us
 for file in *; do convert $file -verbose -resize 1366x768! $file; done
-imv .
 man redshift
 pstree
 lscpu 
-systemctl suspend
 systemctl reboot
 cat /proc/cmdline
 uname -a
@@ -763,7 +739,6 @@ uname -a
 PKGEXT='.pkg.tar' makepkg -sic
 pacman -Syy
 nano /etc/pacman.conf
-redshift -p
 lsblk
 fdisk --list
 sudo fdisk --list
@@ -771,13 +746,11 @@ lsblk -f
 sudo pacman -S hdparm
 hdparm -I /dev/sda
 sudo fff
-htop
 man sudo
 sudo -i
 sudo -s
 echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 neofetch
-echo LID | sudo tee /proc/acpi/wakeup
 systemctl restart systemd-udevd.service
 udevadm trigger
 sudo udevadm trigger
@@ -786,12 +759,33 @@ hdparm -B /dev/sda
 man hdparm
 hdparm -h
 sudo hdparm -M /dev/sda
-sudo hdparm -B /dev/sda
-sudo hdparm /dev/sda
 sudo hdparm -i /dev/sda
 sudo hdparm -I /dev/sda
 pacman -S hdparm
-pacman -Syu
 fff
+curl wttr.in/
+imv .
 sudo hdparm -C /dev/sda
+sudo hdparm -B /dev/sda
+sudo hdparm /dev/sda
+mpsyt
+mpv https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv *
+mpv --ytdl-format="bestvideo[height<=?720]+bestaudio/best" https://www.youtube.com/watch?v=UcFQSqaAPXM
+mpv --vd=help | less
+youtube-viewer
+youtube-dl --help
+mpv --help
+mpv --list-options
+curl cht.sh/youtube-dl
+history
+echo LID | sudo tee /proc/acpi/wakeup
+systemctl suspend
+htop
+pacman -Syu
+reset
+cat /var/log/pacman.log 
 clear
+redshift -p
+killall redshift
+redshift -P -O 5000 &
