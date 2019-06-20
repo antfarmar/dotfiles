@@ -95,7 +95,6 @@ imv -h
 imv ~/pics/
 imv pics/paper
 imv scrot.png
-infocmp
 journalctl --vacuum-size=50M
 kak
 killall chrome
@@ -542,7 +541,6 @@ mount
 mount | column -t
 sudo ls /lost+found/
 man grep
-source ~/.bashrc
 man disown
 cat /var/log/pacman.log
 pacman -Qt
@@ -572,7 +570,6 @@ nano /etc/systemd/logind.conf
 sudo nano /etc/systemd/logind.conf
 systemctl restart systemd-logind.service
 sudo systemctl restart systemd-logind.service
-nano ~/.config/waybar/config 
 pacman -S xf86-video-amdgpu
 sudo netctl switch-to home2G
 lspci
@@ -672,12 +669,9 @@ man umount
 git commit -a -m "edit"
 git push origin master
 git pull
-sudo nano /etc/pacman.d/mirrorlist
-nano /etc/pacman.d/mirrorlist
 nano ~/.config/nano/nanorc
 l
 killall dmenu
-git status
 sway
 lsmod | less
 sudo hwclock
@@ -734,10 +728,8 @@ pstree
 lscpu 
 systemctl reboot
 cat /proc/cmdline
-uname -a
 ./update_version.sh 
 PKGEXT='.pkg.tar' makepkg -sic
-pacman -Syy
 nano /etc/pacman.conf
 lsblk
 fdisk --list
@@ -746,11 +738,7 @@ lsblk -f
 sudo pacman -S hdparm
 hdparm -I /dev/sda
 sudo fff
-man sudo
-sudo -i
-sudo -s
 echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
-neofetch
 systemctl restart systemd-udevd.service
 udevadm trigger
 sudo udevadm trigger
@@ -762,8 +750,6 @@ sudo hdparm -M /dev/sda
 sudo hdparm -i /dev/sda
 sudo hdparm -I /dev/sda
 pacman -S hdparm
-fff
-curl wttr.in/
 imv .
 sudo hdparm -C /dev/sda
 sudo hdparm -B /dev/sda
@@ -778,14 +764,30 @@ youtube-dl --help
 mpv --help
 mpv --list-options
 curl cht.sh/youtube-dl
-history
 echo LID | sudo tee /proc/acpi/wakeup
 systemctl suspend
-htop
-pacman -Syu
-reset
 cat /var/log/pacman.log 
 clear
 redshift -p
 killall redshift
 redshift -P -O 5000 &
+history
+man sudo
+htop
+git status
+curl wttr.in/
+uname -a
+sudo nano /etc/pacman.d/mirrorlist
+pacman -Syy
+nano /etc/pacman.d/mirrorlist
+nano --help
+nano ~/.config/waybar/config 
+reset
+fff
+echo -e "first\nsecond\nthird" | dmenu
+infocmp
+sudo -s
+sudo -i
+source ~/.bashrc
+neofetch
+pacman -Syu

@@ -111,7 +111,7 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
     dwt disabled
     tap enabled
     drag enabled
-    drag_lock enabled
+    #drag_lock enabled
     tap_button_map lmr
     click_method clickfinger
     scroll_method two_finger

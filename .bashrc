@@ -8,8 +8,20 @@
 echo "Processing ~/.bashrc for $USER..."
 
 # PS1 Prompt
-# PS1='[\u@\h \W]\$ '
-PS1='\[\e[01;37m\]┌─[\!]──[\u]───[\[\e[01;33m\] \w \[\e[01;37m\]]\n└─╼>>\[\e[0m\] '
+# PS1="[\u@\h \W]\$ "
+# PS1="\[\e[01;37m\]┌─[\!]──[\u]───[\[\e[01;33m\] \w \[\e[01;37m\]]\n└─╼>>\[\e[0m\] "
+RED="\[$(tput setaf 9)\]"
+GREEN="\[$(tput setaf 10)\]"
+YELLOW="\[$(tput setaf 11)\]"
+BLUE="\[$(tput setaf 12)\]"
+RESET="\[$(tput sgr0)\]"
+PS1="${BLUE}┌──[\!]──[${GREEN}\u${BLUE}]──[${YELLOW}\w${BLUE}]──[\$?]\n└─╼>>${RESET} "
+if [ "$USER" = "root" ]; then
+    PS1="${BLUE}┌──[\!]──[${RED}\u${BLUE}]──[${YELLOW}\w${BLUE}]──[\$?]\n└─╼>>${RESET} "
+fi
+if [[ $(tty) =~ /dev/tty[1-9] ]]; then
+    PS1="\[\e[01;37m\]┌──[\!]──[\u]──[\[\e[01;33m\] \w \[\e[01;37m\]]──[\$?]\n└─╼>>\[\e[0m\] "
+fi
 
 # Shell Options
 # Allows you to cd into directory by typing the directory name.
