@@ -126,7 +126,6 @@ lzop
 makepkg --clean
 man 5 sway
 man cfdisk
-man date
 man fancontrol
 man fdisk
 man grim
@@ -402,7 +401,6 @@ wifi-menu --help
 sudo wifi-menu -o
 netctl switch-to home2G
 netctl stop-all
-sudo netctl stop-all
 netctl list
 netctl stop home2G
 netctl stop home5G
@@ -505,7 +503,6 @@ light -H
 man light
 cat keys.txt
 nano ~/.config/waybar/config
-curl https://wttr.in?1
 waybar --help
 netctl restart home5G
 pacman -Syu --ignore linux
@@ -525,7 +522,6 @@ sudo showkey
 pacman -Ss
 pacman -Ss > packages.txt
 pacman -S asciiquarium
-asciiquarium
 cmatrix
 find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f #Tail of all logs in /var/log
 printenv
@@ -551,10 +547,7 @@ light -G
 light -S 10
 light -S 5
 man modprobe
-man systemctl
 systemctl daemon-reload
-sudo systemctl daemon-reload
-ping archlinux.org
 nano .bashrc 
 systemctl hibernate
 elinks
@@ -571,7 +564,6 @@ sudo nano /etc/systemd/logind.conf
 systemctl restart systemd-logind.service
 sudo systemctl restart systemd-logind.service
 pacman -S xf86-video-amdgpu
-sudo netctl switch-to home2G
 lspci
 man lspci
 lspci -k
@@ -595,7 +587,6 @@ amixer sset Master unmute
 cat /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/mirrorlist.pacnew 
 pacman -S glances
-sudo netctl switch-to home5G
 echo $(tty)
 man man
 gpm -k
@@ -624,13 +615,9 @@ redshift -x
 redshift -h
 imv *
 imv $(ls -1 | sort)
-man ls
 man rm
 tr --help
-alias
 glances
-\pacman -Ss > packages.txt 
-less packages.txt
 man netctl
 man magick
 imv $(ls -S)
@@ -639,8 +626,6 @@ convert image.jpg -resize 1366x768! image.jpg
 man fc
 echo $?
 echo $? #exit code of last command
-lsf
-lsd
 nano
 slurp | grim -g - sshot.png
 du
@@ -660,7 +645,6 @@ killall convert
 convert -verbose -quality 100 *.png jpg
 convert -verbose -quality 100 *.png
 for file in *; do convert $file -verbose ${file%%.*}.jpg; done
-file *
 du -hs *
 du -hs
 umount -vR /mnt/win/
@@ -710,25 +694,20 @@ alacritty --version
 env
 uptime
 neofetch --help
-sudo netctl restart home5G
 sudo htop
 systemctl status
-systemd-analyze blame
 pacman -S man-pages
 man mandb
 mandb --create
 systemctl status man-db
 systemctl status man-db.timer
-systemd-analyze critical-chain
 pacman -Q | less
 telnet redditbox.us
-for file in *; do convert $file -verbose -resize 1366x768! $file; done
 man redshift
 pstree
 lscpu 
 systemctl reboot
 cat /proc/cmdline
-./update_version.sh 
 PKGEXT='.pkg.tar' makepkg -sic
 nano /etc/pacman.conf
 lsblk
@@ -737,7 +716,6 @@ sudo fdisk --list
 lsblk -f
 sudo pacman -S hdparm
 hdparm -I /dev/sda
-sudo fff
 echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
 systemctl restart systemd-udevd.service
 udevadm trigger
@@ -750,7 +728,6 @@ sudo hdparm -M /dev/sda
 sudo hdparm -i /dev/sda
 sudo hdparm -I /dev/sda
 pacman -S hdparm
-imv .
 sudo hdparm -C /dev/sda
 sudo hdparm -B /dev/sda
 sudo hdparm /dev/sda
@@ -765,29 +742,60 @@ mpv --help
 mpv --list-options
 curl cht.sh/youtube-dl
 echo LID | sudo tee /proc/acpi/wakeup
-systemctl suspend
-cat /var/log/pacman.log 
-clear
 redshift -p
-killall redshift
-redshift -P -O 5000 &
-history
 man sudo
-htop
-git status
-curl wttr.in/
 uname -a
 sudo nano /etc/pacman.d/mirrorlist
 pacman -Syy
 nano /etc/pacman.d/mirrorlist
 nano --help
 nano ~/.config/waybar/config 
-reset
-fff
-echo -e "first\nsecond\nthird" | dmenu
 infocmp
+source ~/.bashrc
+history
+reset
+\pacman -Ss > packages.txt 
+less packages.txt
+pacman -S ncdu
+ncdu
+systemd-analyze critical-chain
+lsf 
+lsf
+lsd
+clear
+man systemctl
+systemd-analyze blame
+resolvectl status
+sudo fff
+resolvconf -l
+echo -e "first\nsecond\nthird" | dmenu
+imv . > rm.txt
+sudo systemctl daemon-reload
+sudo netctl stop-all
+ping archlinux.org
+curl https://wttr.in?1
+sudo netctl restart home5G
 sudo -s
 sudo -i
-source ~/.bashrc
+systemctl poweroff
+;s
+man date
+file *
+for file in *; do convert $file -verbose -resize 1366x768! $file; done
+curl wttr.in/
+imv .
+sudo netctl switch-to home2G
+asciiquarium
+./update_version.sh 
+alias
+man ls
+git status
 neofetch
+fff
+sudo netctl switch-to home5G
+systemctl suspend
+htop
+redshift -P -O 5000 &
+killall redshift
 pacman -Syu
+cat /var/log/pacman.log 

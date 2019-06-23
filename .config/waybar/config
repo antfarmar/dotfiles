@@ -15,7 +15,7 @@
          "disable-scroll": false,
          "disable-scroll-wraparound": true,
          "enable-bar-scroll": true, // from anywhere on the bar
-         "smooth-scrolling-threshold": 999999999, // doesn't work
+         "smooth-scrolling-threshold": 5, // doesn't work
          "all-outputs": true,
          "format": "{icon} {name}",
          "format-icons": {
