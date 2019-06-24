@@ -493,7 +493,6 @@ EDITOR=vim fff
 systemctl --user import-environment
 systemctl --user show-environment
 systemctl --user set-environment
-curl https://wttr.in
 curl https://wttr.in?format=1
 curl https://wttr.in?format=2
 curl https://wttr.in?format=3
@@ -506,7 +505,6 @@ nano ~/.config/waybar/config
 waybar --help
 netctl restart home5G
 pacman -Syu --ignore linux
-free -h
 df
 df -h
 nano /etc/xdg/waybar/config
@@ -675,7 +673,6 @@ man dd
 dd bs=4M if=archlinux-2019.06.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
 sudo dd bs=4M if=archlinux-2019.06.01-x86_64.iso of=/dev/sdb status=progress oflag=sync
 sudo mount /dev/sdb1 /mnt/usb/
-ls.
 sudo umount /dev/sdb1
 sudo mount /dev/sdb /mnt/usb/
 sudo umount -vR /mnt/usb/
@@ -691,7 +688,6 @@ nano /boot/loader/entries/arch.conf
 killall alacritty
 alacritty --help
 alacritty --version
-env
 uptime
 neofetch --help
 sudo htop
@@ -743,7 +739,6 @@ mpv --list-options
 curl cht.sh/youtube-dl
 echo LID | sudo tee /proc/acpi/wakeup
 redshift -p
-man sudo
 uname -a
 sudo nano /etc/pacman.d/mirrorlist
 pacman -Syy
@@ -753,18 +748,12 @@ nano ~/.config/waybar/config
 infocmp
 source ~/.bashrc
 history
-reset
-\pacman -Ss > packages.txt 
-less packages.txt
 pacman -S ncdu
 ncdu
-systemd-analyze critical-chain
 lsf 
 lsf
 lsd
-clear
 man systemctl
-systemd-analyze blame
 resolvectl status
 sudo fff
 resolvconf -l
@@ -774,7 +763,6 @@ sudo systemctl daemon-reload
 sudo netctl stop-all
 ping archlinux.org
 curl https://wttr.in?1
-sudo netctl restart home5G
 sudo -s
 sudo -i
 systemctl poweroff
@@ -782,20 +770,48 @@ systemctl poweroff
 man date
 file *
 for file in *; do convert $file -verbose -resize 1366x768! $file; done
-curl wttr.in/
 imv .
 sudo netctl switch-to home2G
 asciiquarium
-./update_version.sh 
 alias
 man ls
-git status
 neofetch
-fff
 sudo netctl switch-to home5G
-systemctl suspend
-htop
-redshift -P -O 5000 &
 killall redshift
-pacman -Syu
+env
+redshift -P -O 5000 &
+curl wttr.in/
+\pacman -Ss > packages.txt 
+less packages.txt
+pacman -Rns qemu
+systemd-analyze blame
+systemd-analyze critical-chain
+clear
 cat /var/log/pacman.log 
+stat -c %a /var/log/audit
+sudo netctl restart home5G
+systemctl --failed
+systemctl list-unit-files
+systemctl suspend
+pacman --help -R
+pacman --help -S
+pacman --help -Q
+pacman --help -D
+pacman --help
+pacman -S gparted
+sudo parted
+man sudo
+xhost +si:localuser:root
+xhost -si:localuser:root
+sudo gparted
+xhost +si:localuser:root && sudo gparted
+mc
+ls.
+fff
+./update_version.sh 
+reset
+pacman -Syu
+curl https://wttr.in
+htop
+free -h
+git status
