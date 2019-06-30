@@ -241,7 +241,6 @@ sudo amixer sset Master unmute
 sudo bash -c "echo 15 > /sys/class/backlight/amdgpu_bl0/brightness"
 sudo bash -c "echo VDPAU_DRIVER=radeonsi >> /etc/environment"
 sudo blkid
-sudo bootctl update
 sudo cat /proc/acpi/wakeup
 sudo cfdisk
 sudo chmod 600 /swapfile
@@ -328,7 +327,6 @@ curl cht.sh/tar
 tar -xzvf ~/walls.tgz
 for f in *; do mv "$f" "${f//_/-}"; done
 tar -czvf ~/walls.tgz .
-tar -czvf ~/walls.tgz *
 tar -ztvf ~/walls.tgz
 for file in ~/pics/*; do convert $file -resize 1366x768! $file; done
 du -hs ~/pics
@@ -629,7 +627,6 @@ slurp | grim -g - sshot.png
 du
 su
 mount /dev/sda3 /mnt/win/
-sudo mount /dev/sda3 /mnt/win/
 imv
 man chown
 sudo chown maf:maf *
@@ -648,8 +645,6 @@ du -hs
 umount -vR /mnt/win/
 sudo umount -vR /mnt/win/
 man umount
-git commit -a -m "edit"
-git push origin master
 git pull
 nano ~/.config/nano/nanorc
 l
@@ -702,14 +697,12 @@ telnet redditbox.us
 man redshift
 pstree
 lscpu 
-systemctl reboot
 cat /proc/cmdline
 PKGEXT='.pkg.tar' makepkg -sic
 nano /etc/pacman.conf
 lsblk
 fdisk --list
 sudo fdisk --list
-lsblk -f
 sudo pacman -S hdparm
 hdparm -I /dev/sda
 echo 15 | sudo tee /sys/class/backlight/amdgpu_bl0/brightness
@@ -739,7 +732,6 @@ mpv --list-options
 curl cht.sh/youtube-dl
 echo LID | sudo tee /proc/acpi/wakeup
 redshift -p
-uname -a
 sudo nano /etc/pacman.d/mirrorlist
 pacman -Syy
 nano /etc/pacman.d/mirrorlist
@@ -764,7 +756,6 @@ sudo netctl stop-all
 ping archlinux.org
 curl https://wttr.in?1
 sudo -s
-sudo -i
 systemctl poweroff
 ;s
 man date
@@ -792,7 +783,6 @@ stat -c %a /var/log/audit
 sudo netctl restart home5G
 systemctl --failed
 systemctl list-unit-files
-systemctl suspend
 pacman --help -R
 pacman --help -S
 pacman --help -Q
@@ -810,8 +800,21 @@ ls.
 fff
 ./update_version.sh 
 reset
-pacman -Syu
 curl https://wttr.in
 htop
 free -h
+git commit -a -m "edit"
+git push origin master
 git status
+systemctl suspend
+bootctl update
+sudo cp bootmgr.efi bootmgfw.efi
+lsblk -f
+sudo mount /dev/sda3 /mnt/win/
+sudo -i
+systemctl reboot
+pacman -Syu
+uname -a
+man tar
+tar -czvf ~/walls.tgz *
+sudo bootctl update
